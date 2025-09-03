@@ -1,0 +1,594 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 7328,
+        "y": 235.19999694824219
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 6741.6759449154388,
+            "y": 668.51775853749325
+          },
+          "nodeIndex": "bd_growth",
+          "nodeLineageTag": "8fad2210-c00f-49d9-9c20-4ba66d981ee6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 7543.6759449154388,
+            "y": 718.51775853749325
+          },
+          "nodeIndex": "bd_timeline",
+          "nodeLineageTag": "ceb796ef-d712-452c-a242-bd3d07a3fd14",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 7827.6759449154388,
+            "y": 816.51775853749325
+          },
+          "nodeIndex": "data_comparativa",
+          "nodeLineageTag": "719d7013-47c0-413d-b6c4-2a140821449b",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7025.6759449154388,
+            "y": 694.51775853749325
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "772fb9d9-acdc-4311-9965-17fc7322d9e5",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8395.6759449154379,
+            "y": 744.51775853749325
+          },
+          "nodeIndex": "bd_timeline_unpivot",
+          "nodeLineageTag": "a2e87677-d3d9-4d51-b974-9b2c0dfbfba1",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8629.6759449154379,
+            "y": 718.51775853749325
+          },
+          "nodeIndex": "bd_cohort",
+          "nodeLineageTag": "c68c5a60-6a16-48fb-af9f-c5c6f0dc5e39",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2765.6759449154388,
+            "y": 792.51775853749325
+          },
+          "nodeIndex": "medidas",
+          "nodeLineageTag": "8413c12b-0984-4fb8-8e83-173a5eaab60f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1380.9274528180113,
+            "y": 325.99807860527858
+          },
+          "nodeIndex": "bd_depositos",
+          "nodeLineageTag": "69aeb7f6-1c6f-4575-9a9f-3c397f4e26f8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1670.3644980590054,
+            "y": 1387.0355170749863
+          },
+          "nodeIndex": "bd_depositos_recorrentes",
+          "nodeLineageTag": "5881cea4-4177-4381-a7c5-1f1bef37e867",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1224.8649564404852,
+            "y": 679.77879002594432
+          },
+          "nodeIndex": "bd_depositos_sankey",
+          "nodeLineageTag": "fd272be7-5fc6-4c61-802e-4119fb9e0e29",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1518.7759070659113,
+            "y": 679.76036023652318
+          },
+          "nodeIndex": "bd_kpc_acumulado",
+          "nodeLineageTag": "9561b02a-26e0-44c3-91ab-09e5a45a15e1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1534.6063114317076,
+            "y": 1033.3793901788968
+          },
+          "nodeIndex": "bd_kpc_loja",
+          "nodeLineageTag": "7402ea82-293c-4e18-b0f3-bcd9dda862d6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2244.571796964784,
+            "y": 1018.5991768762034
+          },
+          "nodeIndex": "bd_resumo_executivo_user",
+          "nodeLineageTag": "7da8d2f5-13dc-4c56-8035-39c46897be69",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1849.6924361069666,
+            "y": 808.2515200985315
+          },
+          "nodeIndex": "bd_softswiss",
+          "nodeLineageTag": "371dfc28-04f4-4056-9a14-a394f73d64b9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3049.6759449154388,
+            "y": 718.51775853749325
+          },
+          "nodeIndex": "bd_softswiss_categoria",
+          "nodeLineageTag": "3ebf1023-aa2a-4c4e-a610-263aae568f18",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1957.4303837659979,
+            "y": 1161.9338940945686
+          },
+          "nodeIndex": "bd_users_dimensao_reduzida",
+          "nodeLineageTag": "3a7ed785-8db6-4ee9-afb3-f9c7b6859418",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2531.6759449154388,
+            "y": 1048.855921237363
+          },
+          "nodeIndex": "calendar_resumo_exec_user",
+          "nodeLineageTag": "229103ce-758f-481b-94f4-10bfed8e7ef1",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 623.10443406171692,
+            "y": 665.12223745320523
+          },
+          "nodeIndex": "dim_data",
+          "nodeLineageTag": "1d0901d2-b519-4c00-a459-4dcaa3d85775",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 909.37282292595057,
+            "y": 679.77887945119664
+          },
+          "nodeIndex": "dim_users",
+          "nodeLineageTag": "467d964a-7bc5-4b80-b9fb-2c54a1103e2b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 436.97826429923816,
+            "y": 308.77096195067065
+          },
+          "nodeIndex": "fato_aposta",
+          "nodeLineageTag": "f7c23487-4d18-43ab-a712-4c04655830c4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 336.7291423420038,
+            "y": 665.10470980574712
+          },
+          "nodeIndex": "fato_clientes_ativos",
+          "nodeLineageTag": "481f19ea-bac8-4853-89ff-f4f853a40204",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 689.524393200112,
+            "y": 1248.4555855122753
+          },
+          "nodeIndex": "fato_contas_depositantes",
+          "nodeLineageTag": "a34f366d-2daf-4abf-bae2-bb0d0f1c57e5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 976.47134690463281,
+            "y": 1032.7924304075623
+          },
+          "nodeIndex": "fato_contas_novas",
+          "nodeLineageTag": "2415225a-bf3f-4792-bd4b-7e4203ae4937",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 977.05994656742462,
+            "y": 1386.4004865500069
+          },
+          "nodeIndex": "fato_deposito",
+          "nodeLineageTag": "df56abe5-20c2-4052-bda0-d8160dbaab9a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 723.910397020408,
+            "y": 24.305432575080204
+          },
+          "nodeIndex": "fato_ftd",
+          "nodeLineageTag": "5586fa9a-0f5f-467a-9103-dde6a50b9243",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1010.0984743057685,
+            "y": -50
+          },
+          "nodeIndex": "fato_ggr",
+          "nodeLineageTag": "e36491b6-4e84-43b4-b0a6-8082dcf02e70",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 665.11326370062716
+          },
+          "nodeIndex": "fato_netcash",
+          "nodeLineageTag": "9e345c1b-70f1-47ef-b9fb-c421a4139bea",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1010.6968700453328,
+            "y": 326.16017084237228
+          },
+          "nodeIndex": "fato_ngr",
+          "nodeLineageTag": "9d711d0e-2b49-4d93-b0cc-80c3e1968093",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 402.73137656905715,
+            "y": 1067.3603863004118
+          },
+          "nodeIndex": "fato_qtd_depositos",
+          "nodeLineageTag": "4b5e0607-5e82-4fa9-a492-b70aebca4db8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3333.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "Taxa %",
+          "nodeLineageTag": "8080b18b-33d7-4adb-8f0e-0f947d9f12cb",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3617.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "Tipo_Legado",
+          "nodeLineageTag": "cc3462da-499f-4b1b-943a-4ebec9492d00",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3901.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "Top5_Aposta_Rollback",
+          "nodeLineageTag": "9bf0b2b9-1875-442f-898b-095fd515ce1d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4185.6759449154388,
+            "y": 792.51775853749325
+          },
+          "nodeIndex": "Top5_Aposta_Rollback_producer",
+          "nodeLineageTag": "755be70c-30ba-4795-b6b0-badd2787562a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4469.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "Top5_Clientes_Ativos",
+          "nodeLineageTag": "67bf472e-ccc7-4dd4-832e-80ba1bec39ce",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4753.6759449154388,
+            "y": 792.51775853749325
+          },
+          "nodeIndex": "Top5_Clientes_Ativos_producer",
+          "nodeLineageTag": "73b3d782-351e-4444-bca2-1c3895e6c195",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5037.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "Top5_Premio_Rollback",
+          "nodeLineageTag": "ffaafa12-19cc-4645-82fd-f4528086313b",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5321.6759449154388,
+            "y": 792.51775853749325
+          },
+          "nodeIndex": "Top5_Premio_Rollback_producer",
+          "nodeLineageTag": "93b2bf48-6b44-4a2b-b2df-00614ede5b8a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5605.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "Top5_TotalAposta",
+          "nodeLineageTag": "26bcc1c2-e07c-4ee3-8d43-d46e19049c59",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5889.6759449154388,
+            "y": 792.51775853749325
+          },
+          "nodeIndex": "Top5_TotalAposta_producer",
+          "nodeLineageTag": "426595d8-305e-4a05-8027-e6d803ed6aab",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6173.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "TopN",
+          "nodeLineageTag": "a3cafbe1-229b-4825-a703-7b5797d8c5cd",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6457.6759449154388,
+            "y": 804.51775853749325
+          },
+          "nodeIndex": "Valor Depósito",
+          "nodeLineageTag": "2a259832-101a-4763-adcc-6513e95c20a9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8863.6759449154379,
+            "y": 718.51775853749314
+          },
+          "nodeIndex": "bd_comparativo",
+          "nodeLineageTag": "8dec9627-124f-4023-80d5-101629d690af",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9097.6759449154379,
+            "y": 0
+          },
+          "nodeIndex": "bd_ajuste_saldo_manual",
+          "nodeLineageTag": "49195b99-195b-4ff3-b898-41f58191386e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9521.91001126529,
+            "y": 0
+          },
+          "nodeIndex": "bd_funil_aquisicao",
+          "nodeLineageTag": "c5e37c9e-490d-4691-89a4-4ce89ecafc48",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}
