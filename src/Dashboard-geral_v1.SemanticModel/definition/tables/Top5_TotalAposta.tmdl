@@ -1,0 +1,87 @@
+table Top5_TotalAposta
+	lineageTag: 26bcc1c2-e07c-4ee3-8d43-d46e19049c59
+
+	measure 'Total Aposta (Top 5 dinâmico c/"Outros")' = ```
+			
+			/* ------------------------------------------------------------------ */
+			/* 1. Monta a lista já filtrada de provedores e calcula seu total     */
+			VAR Base =
+			    SUMMARIZE (
+			        VALUES ( 'bd_softswiss'[provider] ),         -- mantém filtro atual
+			        'bd_softswiss'[provider],
+			        "TotalAposta", [total_aposta_com_outros]
+			    )
+			
+			/* 2. Pega os 5 maiores valores dentro desse subconjunto              */
+			VAR TopTable =
+			    TOPN ( 5, Base, [TotalAposta], DESC )
+			
+			/* 3. Converte em tabela de 1 coluna para comparação/EXCEPT           */
+			VAR TopProv =
+			    SELECTCOLUMNS ( TopTable, "provider", [provider] )
+			
+			/* 4. Quem é a linha que o visual está pedindo no momento?            */
+			VAR SelProv =
+			    SELECTEDVALUE ( Top5_TotalAposta[provider] )
+			
+			/* 5. SelProv está ou não no Top 5?                                   */
+			VAR IsInTop =
+			    CONTAINS ( TopProv, [provider], SelProv )
+			
+			/* ------------------------------------------------------------------ */
+			RETURN
+			SWITCH (
+			    TRUE(),
+			
+			    /* --- Linha “Outros” -------------------------------------------- */
+			    SelProv = "Outros",
+			        CALCULATE (
+			            [total_aposta_com_outros],
+			            KEEPFILTERS (
+			                EXCEPT (                       -- tudo que não for Top 5
+			                    VALUES ( 'bd_softswiss'[provider] ),
+			                    TopProv
+			                )
+			            )
+			        ),
+			
+			    /* --- Linha que faz parte do Top 5 ------------------------------ */
+			    IsInTop,
+			        CALCULATE (
+			            [total_aposta_com_outros],
+			            'bd_softswiss'[provider] = SelProv
+			        ),
+			
+			    /* --- Qualquer outra linha (não Top 5 nem “Outros”) ------------- */
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 70c14849-31ca-480e-b545-2e8c8d9d20d4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column provider
+		lineageTag: 14cbd7d3-9403-424b-8950-d3c33cedf502
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [provider]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Top5_TotalAposta = calculated
+		mode: import
+		source =
+				
+				UNION (
+				    SELECTCOLUMNS (
+				        DISTINCT ( 'bd_softswiss'[provider] ),   -- um por provedor
+				        "provider", 'bd_softswiss'[provider]
+				    ),
+				    DATATABLE (                                   -- adiciona a linha “Outros”
+				        "provider", STRING, { { "Outros" } }
+				    )
+				)
+
+	annotation PBI_Id = d555a7d33bae41878a6b60ac5f7b8e50
+

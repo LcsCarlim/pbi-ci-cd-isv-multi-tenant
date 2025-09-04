@@ -1,0 +1,375 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transformar Arquivo de Consulta1 (9)'
+
+	annotation PBI_QueryGroupOrder = 18
+
+queryGroup 'Transformar Arquivo de Consulta1 (9)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (10)'
+
+	annotation PBI_QueryGroupOrder = 20
+
+queryGroup 'Transformar Arquivo de Consulta1 (10)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (11)'
+
+	annotation PBI_QueryGroupOrder = 22
+
+queryGroup 'Transformar Arquivo de Consulta1 (11)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (13)'
+
+	annotation PBI_QueryGroupOrder = 26
+
+queryGroup 'Transformar Arquivo de Consulta1 (13)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (14)'
+
+	annotation PBI_QueryGroupOrder = 28
+
+queryGroup 'Transformar Arquivo de Consulta1 (14)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de fato_deposito'
+
+	annotation PBI_QueryGroupOrder = 50
+
+queryGroup 'Transformar Arquivo de fato_deposito\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de fato_clientes_ativos_links'
+
+	annotation PBI_QueryGroupOrder = 54
+
+queryGroup 'Transformar Arquivo de fato_clientes_ativos_links\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (26)'
+
+	annotation PBI_QueryGroupOrder = 56
+
+queryGroup 'Transformar Arquivo de Consulta1 (26)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (27)'
+
+	annotation PBI_QueryGroupOrder = 58
+
+queryGroup 'Transformar Arquivo de Consulta1 (27)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (29)'
+
+	annotation PBI_QueryGroupOrder = 62
+
+queryGroup 'Transformar Arquivo de Consulta1 (29)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (30)'
+
+	annotation PBI_QueryGroupOrder = 64
+
+queryGroup 'Transformar Arquivo de Consulta1 (30)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (32)'
+
+	annotation PBI_QueryGroupOrder = 68
+
+queryGroup 'Transformar Arquivo de Consulta1 (32)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (33)'
+
+	annotation PBI_QueryGroupOrder = 70
+
+queryGroup 'Transformar Arquivo de Consulta1 (33)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (35)'
+
+	annotation PBI_QueryGroupOrder = 74
+
+queryGroup 'Transformar Arquivo de Consulta1 (35)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (40)'
+
+	annotation PBI_QueryGroupOrder = 84
+
+queryGroup 'Transformar Arquivo de Consulta1 (40)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (42)'
+
+	annotation PBI_QueryGroupOrder = 88
+
+queryGroup 'Transformar Arquivo de Consulta1 (42)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (43)'
+
+	annotation PBI_QueryGroupOrder = 90
+
+queryGroup 'Transformar Arquivo de Consulta1 (43)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (44)'
+
+	annotation PBI_QueryGroupOrder = 92
+
+queryGroup 'Transformar Arquivo de Consulta1 (44)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (8)'
+
+	annotation PBI_QueryGroupOrder = 92
+
+queryGroup 'Transformar Arquivo de Consulta1 (8)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (12)'
+
+	annotation PBI_QueryGroupOrder = 94
+
+queryGroup 'Transformar Arquivo de Consulta1 (12)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (12)\Transformar Arquivo de Consulta1'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Transformar Arquivo de Consulta1 (12)\Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de bd_resumo_executivo_user'
+
+	annotation PBI_QueryGroupOrder = 98
+
+queryGroup 'Transformar Arquivo de bd_resumo_executivo_user\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (46)'
+
+	annotation PBI_QueryGroupOrder = 100
+
+queryGroup 'Transformar Arquivo de Consulta1 (46)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (2)'
+
+	annotation PBI_QueryGroupOrder = 46
+
+queryGroup 'Transformar Arquivo de Consulta1 (2)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (3)'
+
+	annotation PBI_QueryGroupOrder = 48
+
+queryGroup 'Transformar Arquivo de Consulta1 (3)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (4)'
+
+	annotation PBI_QueryGroupOrder = 50
+
+queryGroup 'Transformar Arquivo de Consulta1 (4)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (5)'
+
+	annotation PBI_QueryGroupOrder = 52
+
+queryGroup 'Transformar Arquivo de Consulta1 (5)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (6)'
+
+	annotation PBI_QueryGroupOrder = 54
+
+queryGroup 'Transformar Arquivo de Consulta1 (6)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de Consulta1 (7)'
+
+	annotation PBI_QueryGroupOrder = 56
+
+queryGroup 'Transformar Arquivo de Consulta1 (7)\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar Arquivo de fato_ftd'
+
+	annotation PBI_QueryGroupOrder = 58
+
+queryGroup 'Transformar Arquivo de fato_ftd\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["bd_depositos_sankey","bd_timeline","bd_growth","bd_resumo_executivo_user","bd_depositos_recorrentes","Arquivo de Amostra (10)","Parâmetro10","Transformar o Arquivo de Exemplo (10)","Transformar Arquivo (10)","bd_softswiss","Arquivo de Amostra (11)","Parâmetro11","Transformar o Arquivo de Exemplo (11)","Transformar Arquivo (11)","bd_users_dimensao_reduzida","Arquivo de Amostra (12)","Parâmetro12","Transformar o Arquivo de Exemplo (12)","Transformar Arquivo (12)","dim_users","Arquivo de Amostra (14)","Parâmetro14","Transformar o Arquivo de Exemplo (14)","Transformar Arquivo (14)","dim_data","Arquivo de Amostra (15)","Parâmetro15","Transformar o Arquivo de Exemplo (15)","Transformar Arquivo (15)","medidas","fato_deposito","Arquivo de Amostra (26)","Parâmetro26","Transformar o Arquivo de Exemplo (26)","Transformar Arquivo (26)","fato_clientes_ativos","Arquivo de Amostra (28)","Parâmetro28","Transformar o Arquivo de Exemplo (28)","Transformar Arquivo (28)","fato_contas_depositantes","Arquivo de Amostra (29)","Parâmetro29","Transformar o Arquivo de Exemplo (29)","Transformar Arquivo (29)","fato_ftd","Arquivo de Amostra (30)","Parâmetro30","Transformar o Arquivo de Exemplo (30)","Transformar Arquivo (30)","fato_ngr","Arquivo de Amostra (32)","Parâmetro32","Transformar o Arquivo de Exemplo (32)","Transformar Arquivo (32)","fato_qtd_depositos","Arquivo de Amostra (33)","Parâmetro33","Transformar o Arquivo de Exemplo (33)","Transformar Arquivo (33)","fato_aposta","Arquivo de Amostra (35)","Parâmetro35","Transformar o Arquivo de Exemplo (35)","Transformar Arquivo (35)","fato_ggr","Arquivo de Amostra (36)","Parâmetro36","Transformar o Arquivo de Exemplo (36)","Transformar Arquivo (36)","fato_contas_novas","Arquivo de Amostra (38)","Parâmetro38","Transformar o Arquivo de Exemplo (38)","Transformar Arquivo (38)","bd_softswiss_categoria","Arquivo de Amostra (43)","Parâmetro43","Transformar o Arquivo de Exemplo (43)","Transformar Arquivo (43)","bd_kpc_loja","Arquivo de Amostra (45)","Parâmetro45","Transformar o Arquivo de Exemplo (45)","Transformar Arquivo (45)","bd_kpc_acumulado","Arquivo de Amostra (46)","Parâmetro46","Transformar o Arquivo de Exemplo (46)","Transformar Arquivo (46)","fato_netcash","Arquivo de Amostra (47)","Parâmetro47","Transformar o Arquivo de Exemplo (47)","Transformar Arquivo (47)","bd_depositos","Arquivo de Amostra (9)","Parâmetro9","Transformar o Arquivo de Exemplo (9)","Transformar Arquivo (9)","Arquivo de Amostra (13)","Parâmetro13","Transformar o Arquivo de Exemplo (13)","Transformar Arquivo (13)","Arquivo de Amostra (49)","Parâmetro49","Transformar o Arquivo de Exemplo (49)","Transformar Arquivo (49)","Arquivo de Amostra (50)","Parâmetro50","Transformar o Arquivo de Exemplo (50)","Transformar Arquivo (50)","bd_comparativo","Arquivo de Amostra (51)","Parâmetro51","Transformar o Arquivo de Exemplo (51)","Transformar Arquivo (51)","bd_ajuste_saldo_manual","Arquivo de Amostra","Parâmetro1","Transformar o Arquivo de Exemplo","Transformar Arquivo","Arquivo de Amostra (2)","Parâmetro2","Transformar o Arquivo de Exemplo (2)","Transformar Arquivo (2)","Arquivo de Amostra (3)","Parâmetro3","Transformar o Arquivo de Exemplo (3)","Transformar Arquivo (3)","Arquivo de Amostra (4)","Parâmetro4","Transformar o Arquivo de Exemplo (4)","Transformar Arquivo (4)","Arquivo de Amostra (5)","Parâmetro5","Transformar o Arquivo de Exemplo (5)","Transformar Arquivo (5)","bd_funil_aquisicao","Arquivo de Amostra (6)","Parâmetro6","Transformar o Arquivo de Exemplo (6)","Transformar Arquivo (6)","Arquivo de Amostra (7)","Parâmetro7","Transformar o Arquivo de Exemplo (7)","Transformar Arquivo (7)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_cf71cbbb-179b-4e4b-807c-cc88cbf91674
+ref table bd_timeline
+ref table LocalDateTable_8af22df3-65b1-4e25-8db2-b79b1bcd5403
+ref table bd_growth
+ref table LocalDateTable_342ee2b1-d45e-4e20-8c1f-bf162e09ec26
+ref table LocalDateTable_5f3e6ae8-9569-4034-bf95-3c0daaf9d127
+ref table data_comparativa
+ref table Calendar
+ref table LocalDateTable_79442d9c-94dc-4d2f-92a8-14efa9b41da9
+ref table bd_timeline_unpivot
+ref table bd_cohort
+ref table LocalDateTable_76247cfe-658f-4901-a3ae-1b5cf92d10bb
+ref table LocalDateTable_0e2117ae-2a95-47a1-b5c5-c8faf90f83af
+ref table LocalDateTable_7cd1972b-2f23-4d02-bd0d-9d8908a7d5bd
+ref table LocalDateTable_0934c99a-7429-4753-8975-e721b8670a67
+ref table bd_resumo_executivo_user
+ref table LocalDateTable_b26a3cce-78a4-4637-84d6-e038085b7d6a
+ref table calendar_resumo_exec_user
+ref table LocalDateTable_f6d625a2-308b-403d-958a-76c6e6db915e
+ref table TopN
+ref table LocalDateTable_ff6dc923-5201-4e80-8973-5884bb11d3e0
+ref table LocalDateTable_b7e638f6-ba2f-430b-bcbd-7c760ccb061f
+ref table LocalDateTable_21c819ed-102c-4f16-96c2-9a48dffb4a6d
+ref table bd_depositos_recorrentes
+ref table bd_softswiss
+ref table bd_users_dimensao_reduzida
+ref table LocalDateTable_fce94ea7-b4c9-4e8c-a8be-1855be6e183c
+ref table dim_users
+ref table LocalDateTable_9fba1887-4ad0-4a75-9bb2-5f10ed273e09
+ref table dim_data
+ref table LocalDateTable_4bf028e6-b8ad-49d1-9de9-3f0aa0d42643
+ref table medidas
+ref table fato_deposito
+ref table LocalDateTable_76dbad9d-e87f-4b9c-9b28-d752d38d450a
+ref table fato_clientes_ativos
+ref table LocalDateTable_b3b6eb02-97fe-4f35-88fd-c2b2bafe429a
+ref table fato_contas_depositantes
+ref table LocalDateTable_79ac44fc-2d4b-4448-bf42-03d05edc5dc3
+ref table fato_ftd
+ref table LocalDateTable_8576adda-ce27-4187-b584-43df18cad42c
+ref table fato_ngr
+ref table LocalDateTable_7ff4230c-82f0-4923-a342-abc843a4aa18
+ref table fato_qtd_depositos
+ref table LocalDateTable_f77f53a1-8cc6-4ad4-be7b-c27d0e66bb54
+ref table LocalDateTable_7a218738-3a71-4876-8535-01bdda277bab
+ref table LocalDateTable_2f9fc419-2d9b-47ca-8628-ac885868fa4d
+ref table LocalDateTable_b88546b1-994d-47fd-b258-2355e1078847
+ref table LocalDateTable_664726c0-1b0f-49b4-ad30-13d532578463
+ref table LocalDateTable_f2aae8f3-44ae-488c-b7ee-a0d83a4c4342
+ref table LocalDateTable_38445ea6-2816-4103-a6fc-304f9fc6b278
+ref table fato_aposta
+ref table LocalDateTable_955f01c9-564e-4cf4-918a-a2d1968de102
+ref table fato_ggr
+ref table LocalDateTable_a26bdd00-dc3b-45b0-8f08-44d045ef6292
+ref table LocalDateTable_5d31d01b-13a6-4a06-9c0b-109bddd6ebfe
+ref table LocalDateTable_fac0b45c-88a0-4dca-aee1-a1f804fdd056
+ref table fato_contas_novas
+ref table LocalDateTable_622ba333-69ff-4952-8c02-293ebdbe1ad8
+ref table LocalDateTable_613ee781-7b87-4c5e-99a5-0cdeaff25f4e
+ref table Top5_TotalAposta_producer
+ref table Top5_Clientes_Ativos_producer
+ref table Top5_Premio_Rollback_producer
+ref table Top5_Aposta_Rollback_producer
+ref table LocalDateTable_8df97490-291b-446e-bcda-79f571aeaf47
+ref table bd_softswiss_categoria
+ref table LocalDateTable_470a688d-9f3a-417f-b519-857c00b46eb4
+ref table LocalDateTable_086af90c-2bd7-49c6-8fe8-157f5e1827ef
+ref table LocalDateTable_5b84aaf9-abcf-4b49-9c81-82ca4ce87f57
+ref table bd_kpc_loja
+ref table LocalDateTable_f9eec73f-3d9d-443f-9f52-996330ebe2ee
+ref table LocalDateTable_ee4bf0de-0d80-405e-ae7f-c36a7d535ce3
+ref table LocalDateTable_e9ceefb4-46d0-4768-a7f0-4c22acaa3fcf
+ref table bd_kpc_acumulado
+ref table LocalDateTable_c1116331-c76d-448c-a62e-1df1b6ebc8ef
+ref table LocalDateTable_7be2533f-3bcc-4695-943e-bf8f3da8689a
+ref table Top5_Aposta_Rollback
+ref table Top5_Clientes_Ativos
+ref table Top5_Premio_Rollback
+ref table Top5_TotalAposta
+ref table fato_netcash
+ref table LocalDateTable_52392ea2-d9b6-4070-b610-2c9b9823b98b
+ref table LocalDateTable_a3f70299-38cc-41f9-bb6b-e2105a157a1e
+ref table LocalDateTable_d3b396df-2ddb-4577-8893-2287565686fb
+ref table bd_depositos
+ref table LocalDateTable_73c834bf-ed64-4052-942a-99373ea9a0a6
+ref table LocalDateTable_0278a9ac-76bf-4684-8be5-c386d9239436
+ref table Tipo_Legado
+ref table 'Taxa %'
+ref table 'Valor Depósito'
+ref table LocalDateTable_9e55a2c4-5112-4a57-83e8-ab3ca2692cb5
+ref table LocalDateTable_4dedc774-db0c-4096-8b8f-1800178efac9
+ref table bd_depositos_sankey
+ref table LocalDateTable_187f00be-da14-4a3a-89c8-142d2ed3a42e
+ref table LocalDateTable_050792db-36c4-4454-9518-d595bccbaa4b
+ref table LocalDateTable_4154666d-b2ef-461a-a86b-a4ecd5b5d50c
+ref table LocalDateTable_d17f0900-c2cb-455d-9f29-a07661ff711e
+ref table LocalDateTable_c260fe73-0c1f-49dc-9950-edcd9654ba2b
+ref table LocalDateTable_753aa433-c547-45b4-863d-23ba6effcc08
+ref table LocalDateTable_35ba3530-6104-4f74-ac5a-fa70c37b8446
+ref table bd_comparativo
+ref table LocalDateTable_96bb169f-8ccd-43c4-a730-16727817bd0e
+ref table LocalDateTable_af2653dd-ca79-447d-8f2c-b1a63411640e
+ref table LocalDateTable_269fb6ed-5b8c-4f96-b821-61665576bfa4
+ref table bd_ajuste_saldo_manual
+ref table LocalDateTable_5b3b89ad-1a82-4127-b48f-165b5055501e
+ref table LocalDateTable_93d58e86-e035-4f0c-a256-f18a1c0c4aa0
+ref table bd_funil_aquisicao
+ref table LocalDateTable_605f0955-1ad5-4935-96fa-8b54215e6bce
+ref table LocalDateTable_4d10a3b1-e5c5-4f29-a65b-d44475d47c80
+ref table LocalDateTable_12c0e005-8a9c-472f-b411-c630e6ad92a3
+ref table LocalDateTable_b1274b59-31c8-4a84-a0dd-4b5d3c301b05
+ref table LocalDateTable_915aadc1-f759-459c-a14b-8b80b9e80926
+ref table LocalDateTable_37cf6bb5-0c67-4265-b8f5-89cd39a096f6
+ref table LocalDateTable_1e1479ce-99c8-46f6-ac80-d0ebe90e061c
+ref table LocalDateTable_bae50e4c-002f-4b00-b96d-ad74213ad9b8
+
+ref cultureInfo pt-BR
+

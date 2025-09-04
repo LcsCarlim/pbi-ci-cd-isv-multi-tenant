@@ -1,0 +1,967 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 3907.1428571428573,
+        "y": 30.000000000000004
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 284,
+            "y": 25
+          },
+          "nodeIndex": "bd_timeline",
+          "nodeLineageTag": "ceb796ef-d712-452c-a242-bd3d07a3fd14",
+          "size": {
+            "height": 693,
+            "width": 234
+          },
+          "zIndex": 43
+        },
+        {
+          "location": {
+            "x": 656.57142857142856,
+            "y": 0
+          },
+          "nodeIndex": "bd_growth",
+          "nodeLineageTag": "84a3ced9-8a01-4bb5-a199-7ca339b80dfd",
+          "size": {
+            "height": 695.31134401972884,
+            "width": 234
+          },
+          "zIndex": 42
+        },
+        {
+          "location": {
+            "x": 979.64768617747575,
+            "y": 390.70968706295156
+          },
+          "nodeIndex": "data_comparativa",
+          "nodeLineageTag": "719d7013-47c0-413d-b6c4-2a140821449b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 40
+        },
+        {
+          "location": {
+            "x": 1002.6790833257476,
+            "y": 54.57078012893183
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "772fb9d9-acdc-4311-9965-17fc7322d9e5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 41
+        },
+        {
+          "location": {
+            "x": 1655.7775407773981,
+            "y": 281.5
+          },
+          "nodeIndex": "bd_timeline_unpivot",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 38
+        },
+        {
+          "location": {
+            "x": 1939.7775407773981,
+            "y": 281.5
+          },
+          "nodeIndex": "bd_cohort",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 39
+        },
+        {
+          "location": {
+            "x": 2223.7775407773979,
+            "y": 231.5
+          },
+          "nodeIndex": "bd_resumo_executivo_user",
+          "nodeLineageTag": "7da8d2f5-13dc-4c56-8035-39c46897be69",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 36
+        },
+        {
+          "location": {
+            "x": 2554.5816923758057,
+            "y": 250.29723226772811
+          },
+          "nodeIndex": "calendar_resumo_exec_user",
+          "nodeLineageTag": "229103ce-758f-481b-94f4-10bfed8e7ef1",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 37
+        },
+        {
+          "location": {
+            "x": 3974.5816923758057,
+            "y": 269.5
+          },
+          "nodeIndex": "TopN",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 4258.5816923758057,
+            "y": 229.23629788396136
+          },
+          "nodeIndex": "bd_depositos_recorrentes",
+          "nodeLineageTag": "5881cea4-4177-4381-a7c5-1f1bef37e867",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 4258.5816923758057,
+            "y": 229.23629788396136
+          },
+          "nodeIndex": "bd_softswiss",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 3665.724549518663,
+            "y": 36.428571428571431
+          },
+          "nodeIndex": "bd_users_dimensao_reduzida",
+          "nodeLineageTag": "3a7ed785-8db6-4ee9-afb3-f9c7b6859418",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 5084.295978090091,
+            "y": 25
+          },
+          "nodeIndex": "dim_data",
+          "nodeLineageTag": "1d0901d2-b519-4c00-a459-4dcaa3d85775",
+          "size": {
+            "height": 201.14285714285714,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 5314.0102638043782,
+            "y": 567.80772645538991
+          },
+          "nodeIndex": "dim_users",
+          "nodeLineageTag": "467d964a-7bc5-4b80-b9fb-2c54a1103e2b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 7154.2959780900919,
+            "y": 326.4162173281332
+          },
+          "nodeIndex": "fato_aposta",
+          "nodeLineageTag": "f7c23487-4d18-43ab-a712-4c04655830c4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 7789.4388352329488,
+            "y": 0
+          },
+          "nodeIndex": "fato_ftd",
+          "nodeLineageTag": "5586fa9a-0f5f-467a-9103-dde6a50b9243",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 8009.153120947235,
+            "y": 340.70193161384748
+          },
+          "nodeIndex": "fato_ggr",
+          "nodeLineageTag": "e36491b6-4e84-43b4-b0a6-8082dcf02e70",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 8290.2959780900928,
+            "y": 332.13050304241892
+          },
+          "nodeIndex": "fato_ngr",
+          "nodeLineageTag": "9d711d0e-2b49-4d93-b0cc-80c3e1968093",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 8830.0102638043791,
+            "y": 356.4162173281332
+          },
+          "nodeIndex": "fato_clientes_ativos",
+          "nodeLineageTag": "481f19ea-bac8-4853-89ff-f4f853a40204",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 7439.7245495186635,
+            "y": 337.84478875670459
+          },
+          "nodeIndex": "fato_contas_depositantes",
+          "nodeLineageTag": "a34f366d-2daf-4abf-bae2-bb0d0f1c57e5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 8564.2959780900928,
+            "y": 336.4162173281332
+          },
+          "nodeIndex": "fato_qtd_depositos",
+          "nodeLineageTag": "4b5e0607-5e82-4fa9-a492-b70aebca4db8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 6814.5816923758057,
+            "y": 394.40386322769496
+          },
+          "nodeIndex": "medidas",
+          "nodeLineageTag": "8413c12b-0984-4fb8-8e83-173a5eaab60f",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 6984.2959780900919,
+            "y": 647.8324346562664
+          },
+          "nodeIndex": "fato_deposito",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 8771.43883523295,
+            "y": 715
+          },
+          "nodeIndex": "fato_contas_novas",
+          "nodeLineageTag": "2415225a-bf3f-4792-bd4b-7e4203ae4937",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 9020.0102638043791,
+            "y": 30.85714285714289
+          },
+          "nodeIndex": "bd_softswiss_categoria",
+          "nodeLineageTag": "3ebf1023-aa2a-4c4e-a610-263aae568f18",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 9679.1531209472359,
+            "y": 368
+          },
+          "nodeIndex": "bd_kpc_acumulado",
+          "nodeLineageTag": "2f9f3481-ede8-4fcf-aed1-f97630f3ea2a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 9679.1531209472359,
+            "y": 368
+          },
+          "nodeIndex": "bd_kpc_loja",
+          "nodeLineageTag": "7402ea82-293c-4e18-b0f3-bcd9dda862d6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 44
+        },
+        {
+          "location": {
+            "x": 9111.1531209472359,
+            "y": 418
+          },
+          "nodeIndex": "Top5_TotalAposta_producer",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 9395.1531209472359,
+            "y": 418
+          },
+          "nodeIndex": "Top5_Premio_Rollback_producer",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 9267.1531209472359,
+            "y": 37.999999999999943
+          },
+          "nodeIndex": "Top5_Clientes_Ativos_producer",
+          "nodeLineageTag": "73b3d782-351e-4444-bca2-1c3895e6c195",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 9679.1531209472359,
+            "y": 418
+          },
+          "nodeIndex": "Top5_Aposta_Rollback_producer",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 9679.1531209472359,
+            "y": 418
+          },
+          "nodeIndex": "Top5_Aposta_Rollback",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 9679.1531209472359,
+            "y": 418
+          },
+          "nodeIndex": "Top5_Clientes_Ativos",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 9679.1531209472359,
+            "y": 418
+          },
+          "nodeIndex": "Top5_Premio_Rollback",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 9679.1531209472359,
+            "y": 418
+          },
+          "nodeIndex": "Top5_TotalAposta",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 26
+        },
+        {
+          "location": {
+            "x": 9539.1531209472359,
+            "y": 819.42857142857144
+          },
+          "nodeIndex": "fato_netcash",
+          "nodeLineageTag": "9e345c1b-70f1-47ef-b9fb-c421a4139bea",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 9807.7245495186653,
+            "y": 698.642857142857
+          },
+          "nodeIndex": "bd_depositos",
+          "nodeLineageTag": "69aeb7f6-1c6f-4575-9a9f-3c397f4e26f8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 28
+        },
+        {
+          "location": {
+            "x": 10375.724549518665,
+            "y": 446.92857142857133
+          },
+          "nodeIndex": "Tipo_Legado",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 29
+        },
+        {
+          "location": {
+            "x": 10141.724549518665,
+            "y": 346.92857142857133
+          },
+          "nodeIndex": "bd_depositos_sankey",
+          "nodeLineageTag": "505a29b4-124f-4d59-8f63-aaa168bbb6f6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 30
+        },
+        {
+          "location": {
+            "x": 10659.724549518665,
+            "y": 434.92857142857133
+          },
+          "nodeIndex": "Taxa %",
+          "nodeLineageTag": "8080b18b-33d7-4adb-8f0e-0f947d9f12cb",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 31
+        },
+        {
+          "location": {
+            "x": 10943.724549518665,
+            "y": 434.92857142857133
+          },
+          "nodeIndex": "Valor Depósito",
+          "nodeLineageTag": "2a259832-101a-4763-adcc-6513e95c20a9",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 32
+        },
+        {
+          "location": {
+            "x": 10393.438835232952,
+            "y": 0
+          },
+          "nodeIndex": "bd_comparativo",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 33
+        },
+        {
+          "location": {
+            "x": 10943.724549518665,
+            "y": 409.71428571428578
+          },
+          "nodeIndex": "bd_ajuste_saldo_manual",
+          "nodeLineageTag": "49195b99-195b-4ff3-b898-41f58191386e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 34
+        },
+        {
+          "location": {
+            "x": 11042.295978090095,
+            "y": 14.000000000000057
+          },
+          "nodeIndex": "bd_funil_aquisicao",
+          "nodeLineageTag": "c5e37c9e-490d-4691-89a4-4ce89ecafc48",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 35
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 70,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 3.75,
+        "y": 75
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 156,
+            "y": 0
+          },
+          "nodeIndex": "dim_data",
+          "nodeLineageTag": "1d0901d2-b519-4c00-a459-4dcaa3d85775",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 11,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 444.22222222222229,
+            "y": 0
+          },
+          "nodeIndex": "dim_users",
+          "nodeLineageTag": "467d964a-7bc5-4b80-b9fb-2c54a1103e2b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1104.6666666666665,
+            "y": 0
+          },
+          "nodeIndex": "fato_aposta",
+          "nodeLineageTag": "0aa194ca-4987-4cf4-9725-b60c77287f8f",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1081.6666666666665,
+            "y": 518.77777777777783
+          },
+          "nodeIndex": "fato_clientes_ativos",
+          "nodeLineageTag": "f6146915-1518-4c35-bac9-a42f9fb32014",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 796.88888888888891,
+            "y": 506.44444444444446
+          },
+          "nodeIndex": "fato_contas_depositantes",
+          "nodeLineageTag": "ef7ef5e4-3cc4-4c4b-b046-38b816c1510e",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 464.22222222222217,
+            "y": 587.11111111111109
+          },
+          "nodeIndex": "fato_ftd",
+          "nodeLineageTag": "2d7908b8-a9c9-4f57-a5ba-fe10e245abba",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 99.999999999999986,
+            "y": 521.55555555555566
+          },
+          "nodeIndex": "fato_ggr",
+          "nodeLineageTag": "38637079-f886-49c8-af36-3672fabd3d1c",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 827.77777777777783,
+            "y": 0
+          },
+          "nodeIndex": "fato_ngr",
+          "nodeLineageTag": "70005258-ee95-4fc4-b8ac-092f9b25dc6c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1067.1111111111109,
+            "y": 287.33333333333331
+          },
+          "nodeIndex": "fato_qtd_depositos",
+          "nodeLineageTag": "05866c04-e4ec-4078-9bf6-3bee78ed277b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 185
+          },
+          "nodeIndex": "fato_deposito",
+          "nodeLineageTag": "df56abe5-20c2-4052-bda0-d8160dbaab9a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 721.25,
+            "y": 715.55555555555554
+          },
+          "nodeIndex": "fato_contas_novas",
+          "nodeLineageTag": "2415225a-bf3f-4792-bd4b-7e4203ae4937",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1083,
+            "y": 756.25
+          },
+          "nodeIndex": "fato_netcash",
+          "nodeLineageTag": "9e345c1b-70f1-47ef-b9fb-c421a4139bea",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1337.75,
+            "y": 363.75
+          },
+          "nodeIndex": "bd_users_dimensao_reduzida",
+          "nodeLineageTag": "3a7ed785-8db6-4ee9-afb3-f9c7b6859418",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 13
+        }
+      ],
+      "name": "linkagens",
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 704,
+            "y": 149
+          },
+          "nodeIndex": "bd_softswiss",
+          "nodeLineageTag": "371dfc28-04f4-4056-9a14-a394f73d64b9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 291,
+            "y": 155
+          },
+          "nodeIndex": "bd_softswiss_categoria",
+          "nodeLineageTag": "55338d69-01d1-4d61-b2f6-2ad85f3e9f72",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 3,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 363,
+            "y": 101
+          },
+          "nodeIndex": "bd_resumo_executivo_user",
+          "nodeLineageTag": "7da8d2f5-13dc-4c56-8035-39c46897be69",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 828,
+            "y": 113
+          },
+          "nodeIndex": "bd_softswiss",
+          "nodeLineageTag": "371dfc28-04f4-4056-9a14-a394f73d64b9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 2",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 532,
+            "y": 262
+          },
+          "nodeIndex": "bd_resumo_executivo_user",
+          "nodeLineageTag": "7da8d2f5-13dc-4c56-8035-39c46897be69",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 817,
+            "y": 261
+          },
+          "nodeIndex": "bd_comparativo",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 3",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 5,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 861,
+            "y": 151
+          },
+          "nodeIndex": "bd_depositos",
+          "nodeLineageTag": "bb25a31e-6ca2-42fc-b041-31f6b1f92d1f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 429,
+            "y": 156
+          },
+          "nodeIndex": "bd_resumo_executivo_user",
+          "nodeLineageTag": "7da8d2f5-13dc-4c56-8035-39c46897be69",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": -28,
+            "y": 385
+          },
+          "nodeIndex": "bd_users_dimensao_reduzida",
+          "nodeLineageTag": "3a7ed785-8db6-4ee9-afb3-f9c7b6859418",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 691.50000381469727,
+            "y": 593.700008392334
+          },
+          "nodeIndex": "bd_depositos_sankey",
+          "nodeLineageTag": "fd272be7-5fc6-4c61-802e-4119fb9e0e29",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 333,
+            "y": 623.75
+          },
+          "nodeIndex": "bd_depositos_recorrentes",
+          "nodeLineageTag": "5881cea4-4177-4381-a7c5-1f1bef37e867",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 4",
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "linkagens",
+  "defaultDiagram": "Todas as tabelas"
+}

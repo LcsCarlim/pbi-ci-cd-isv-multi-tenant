@@ -1,0 +1,41 @@
+table Tipo_Legado
+	lineageTag: cc3462da-499f-4b1b-943a-4ebec9492d00
+
+	column Legado
+		lineageTag: d3fdc8c8-23fc-4f61-b964-1a1ab0a0bd42
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Legado]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Meses
+		formatString: 0
+		lineageTag: 835d6694-20f1-4bf9-9952-5d84596ec983
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Meses]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tipo_Legado = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "Legado", STRING,     -- rótulo visível no slicer
+				    "Meses",  INTEGER,    -- valor numérico que usaremos no cálculo
+				    {
+				        { "1 mês", 1 },
+				        { "2 meses", 2 },
+				        { "3 meses", 3 },
+				        { "4 meses", 4 },
+				        { "5 meses", 5 },
+				        { "6 meses", 6 }
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 8e3436ac915f4abbb62a8bc887d7b187
+

@@ -1,0 +1,23 @@
+table data_comparativa
+	lineageTag: 719d7013-47c0-413d-b6c4-2a140821449b
+
+	column Data
+		formatString: General Date
+		lineageTag: fc9d9d5f-5774-4ec2-8520-8159b8c50bc2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Data]
+
+		variation Variation
+			isDefault
+			relationship: 5f5f2d55-8be3-4859-9ad2-5473cdb11c83
+			defaultHierarchy: LocalDateTable_21c819ed-102c-4f16-96c2-9a48dffb4a6d.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_comparativa = calculated
+		mode: import
+		source = DISTINCT(SELECTCOLUMNS(bd_resumo_executivo_user, "Data", bd_resumo_executivo_user[data]))
+
+	annotation PBI_Id = 875666cf0b5146d8a315928d5fa9317e
+
