@@ -1,23 +1,19 @@
 name: deploy-isv
   
 on:
-
   pull_request:
     branches:
-      - main           
+      - main
     paths:
-      - '**/src/**'        
-  
+      - '**/src/**'
   workflow_dispatch:
 
-  
 jobs:
-
   tenantDeploy:
     runs-on: ubuntu-latest
-    strategy:     
-      matrix:        
-        tenant: [TENANT_A, TENANT_B, TENANT_C]      
+    strategy:
+      matrix:
+        tenant: [TENANT_A, TENANT_B, TENANT_C]
 
     steps:
       - name: Check out the code
@@ -36,7 +32,58 @@ jobs:
         env:
           # Maps the GitHub secret 'ISV_<TenantName>' to the 'ISV_<TenantName>' environment variable
           ${{ format('ISV_{0}', matrix.tenant) }}: ${{ secrets[format('ISV_{0}', matrix.tenant)] }}
-        # Same python code for each tenant, but with different values for the 'tenant' argument  
+        # Same python code for each tenant, but with different values for the 'tenant' argument
         run: |
           python scripts/deploy-isv.py --config-file "./config-isv.json" --tenant ${{ matrix.tenant }}
-  
+
+      # ---------- A PARTIR DAQUI: BrandHex por tenant ----------
+
+      # 0) Obter token do Power BI (sem Azure CLI)
+      - name: Get Power BI access token (no az cli)
+        env:
+          CLIENT_ID:     ${{ secrets.FABRIC_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
+          TENANT_ID:     ${{ secrets.FABRIC_TENANT_ID }}
+        run: |
+          TOKEN=$(curl -sS -X POST \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&scope=https%3A%2F%2Fanalysis.windows.net%2Fpowerbi%2Fapi%2F.default&grant_type=client_credentials" \
+            "https://login.microsoftonline.com/$TENANT_ID/oauth2/v2.0/token" | jq -r '.access_token')
+          echo "PBI_TOKEN=$TOKEN" >> $GITHUB_ENV
+
+      # 1) Ler a cor e o workspace do tenant direto do config-isv.json
+      - id: cfg
+        run: |
+          T="${{ matrix.tenant }}"
+          BRAND=$(jq -r --arg t "$T" '.[$t].brandHex' config-isv.json)
+          WSPACE=$(jq -r --arg t "$T" '.[$t].workspace' config-isv.json)
+          echo "brand_hex=$BRAND"       >> $GITHUB_OUTPUT
+          echo "workspace_name=$WSPACE" >> $GITHUB_OUTPUT
+
+      # 2) Descobrir IDs do workspace e do dataset
+      - id: ids
+        env:
+          PBI_TOKEN: ${{ env.PBI_TOKEN }}
+        run: |
+          GROUP_ID=$(curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
+            "https://api.powerbi.com/v1.0/myorg/groups" \
+            | jq -r --arg n "${{ steps.cfg.outputs.workspace_name }}" '.value[] | select(.name==$n) | .id')
+          # tenta achar o dataset pelo nome; se não achar, pega o primeiro dataset do workspace
+          DATASET_ID=$(curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
+            "https://api.powerbi.com/v1.0/myorg/groups/${GROUP_ID}/datasets" \
+            | jq -r --arg n "${{ env.DATASET_NAME }}" '(.value[] | select(.name==$n) | .id) // .value[0].id')
+          echo "group_id=$GROUP_ID"     >> $GITHUB_OUTPUT
+          echo "dataset_id=$DATASET_ID" >> $GITHUB_OUTPUT
+
+      # 3) Atualizar apenas BrandHex e fazer refresh
+      - name: Set BrandHex + refresh
+        env:
+          PBI_TOKEN: ${{ env.PBI_TOKEN }}
+        run: |
+          curl -sS -X POST \
+            -H "Authorization: Bearer $PBI_TOKEN" -H "Content-Type: application/json" \
+            "https://api.powerbi.com/v1.0/myorg/groups/${{ steps.ids.outputs.group_id }}/datasets/${{ steps.ids.outputs.dataset_id }}/Default.UpdateParameters" \
+            -d '{"updateDetails":[{"name":"BrandHex","newValue":"'"${{ steps.cfg.outputs.brand_hex }}"'"}]}'
+          curl -sS -X POST \
+            -H "Authorization: Bearer $PBI_TOKEN" \
+            "https://api.powerbi.com/v1.0/myorg/groups/${{ steps.ids.outputs.group_id }}/datasets/${{ steps.ids.outputs.dataset_id }}/refreshes"
