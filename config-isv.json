@@ -1,32 +1,35 @@
 {
-    "TENANT_A": {
-        "spnSecret": "ISV_TENANT_A",
-        "capacity": "none",
-        "workspace": "AdventureWorks_NorthAmerica",
-        "adminUPNs": "a9b51339-2089-43d5-ab51-a33a160be7a6,37523bc5-ce3d-4ded-bf23-dd87699ebba7",
-        "semanticModelsParameters": {
-            "SqlServerInstance": "BOOK-PROIJR07F2",
-            "SqlServerDatabase": "AdventureWorksDW-NorthAmerica"
-        }
-    },
-    "TENANT_B": {
-        "spnSecret": "ISV_TENANT_B",
-        "capacity": "none",
-        "workspace": "AdventureWorks_Europe",
-        "adminUPNs": "a9b51339-2089-43d5-ab51-a33a160be7a6,37523bc5-ce3d-4ded-bf23-dd87699ebba7",
-        "semanticModelsParameters": {
-            "SqlServerInstance": "BOOK-PROIJR07F2",
-            "SqlServerDatabase": "AdventureWorksDW-Europe"
-        }
-    },
-    "TENANT_C": {
-        "spnSecret": "ISV_TENANT_C",
-        "capacity": "none",
-        "workspace": "AdventureWorks_Oceania",
-        "adminUPNs": "a9b51339-2089-43d5-ab51-a33a160be7a6,37523bc5-ce3d-4ded-bf23-dd87699ebba7",
-        "semanticModelsParameters": {
-            "SqlServerInstance": "BOOK-PROIJR07F2",
-            "SqlServerDatabase": "AdventureWorksDW-Pacific"
-        }
+  "TENANT_A": {
+    "spnSecret": "ISV_TENANT_A",
+    "capacity": "none",
+    "workspace": "AdventureWorks_NorthAmerica",
+    "adminUPNs": "a9b51339-2089-43d5-ab51-a33a160be7a6,37523bc5-ce3d-4ded-bf23-dd87699ebba7",
+    "brandHex": "#422256",
+    "semanticModelsParameters": {
+      "SqlServerInstance": "BOOK-PROIJR07F2",
+      "SqlServerDatabase": "AdventureWorksDW-NorthAmerica"
     }
+  },
+  "TENANT_B": {
+    "spnSecret": "ISV_TENANT_B",
+    "capacity": "none",
+    "workspace": "AdventureWorks_Europe",
+    "adminUPNs": "a9b51339-2089-43d5-ab51-a33a160be7a6,37523bc5-ce3d-4ded-bf23-dd87699ebba7",
+    "brandHex": "#008000",
+    "semanticModelsParameters": {
+      "SqlServerInstance": "BOOK-PROIJR07F2",
+      "SqlServerDatabase": "AdventureWorksDW-Europe"
+    }
+  },
+  "TENANT_C": {
+    "spnSecret": "ISV_TENANT_C",
+    "capacity": "none",
+    "workspace": "AdventureWorks_Oceania",
+    "adminUPNs": "a9b51339-2089-43d5-ab51-a33a160be7a6,37523bc5-ce3d-4ded-bf23-dd87699ebba7",
+    "brandHex": "#422256",
+    "semanticModelsParameters": {
+      "SqlServerInstance": "BOOK-PROIJR07F2",
+      "SqlServerDatabase": "AdventureWorksDW-Pacific"
+    }
+  }
 }
