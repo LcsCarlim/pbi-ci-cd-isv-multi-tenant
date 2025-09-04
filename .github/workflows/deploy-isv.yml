@@ -1,23 +1,19 @@
 name: deploy-isv
   
 on:
-
   pull_request:
     branches:
-      - main           
+      - main
     paths:
-      - '**/src/**'        
-  
+      - '**/src/**'
   workflow_dispatch:
 
-  
 jobs:
-
   tenantDeploy:
     runs-on: ubuntu-latest
-    strategy:     
-      matrix:        
-        tenant: [TENANT_A, TENANT_B, TENANT_C]      
+    strategy:
+      matrix:
+        tenant: [TENANT_A, TENANT_B, TENANT_C]
 
     steps:
       - name: Check out the code
@@ -36,22 +32,24 @@ jobs:
         env:
           # Maps the GitHub secret 'ISV_<TenantName>' to the 'ISV_<TenantName>' environment variable
           ${{ format('ISV_{0}', matrix.tenant) }}: ${{ secrets[format('ISV_{0}', matrix.tenant)] }}
-        # Same python code for each tenant, but with different values for the 'tenant' argument  
+        # Same python code for each tenant, but with different values for the 'tenant' argument
         run: |
           python scripts/deploy-isv.py --config-file "./config-isv.json" --tenant ${{ matrix.tenant }}
-  
-         # ---------- ADICIONE A PARTIR DAQUI ----------
 
-      # 0) Obter token da API do Power BI usando seu SPN (os mesmos secrets do deploy.yml)
-      - name: Get Power BI access token
+      # ---------- A PARTIR DAQUI: BrandHex por tenant ----------
+
+      # 0) Obter token do Power BI (sem Azure CLI)
+      - name: Get Power BI access token (no az cli)
         env:
           CLIENT_ID:     ${{ secrets.FABRIC_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
           TENANT_ID:     ${{ secrets.FABRIC_TENANT_ID }}
         run: |
-          sudo apt-get update && sudo apt-get install -y azure-cli
-          az login --service-principal -u "$CLIENT_ID" -p "$CLIENT_SECRET" --tenant "$TENANT_ID"
-          echo "PBI_TOKEN=$(az account get-access-token --resource=https://analysis.windows.net/powerbi/api --query accessToken -o tsv)" >> $GITHUB_ENV
+          TOKEN=$(curl -sS -X POST \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&scope=https%3A%2F%2Fanalysis.windows.net%2Fpowerbi%2Fapi%2F.default&grant_type=client_credentials" \
+            "https://login.microsoftonline.com/$TENANT_ID/oauth2/v2.0/token" | jq -r '.access_token')
+          echo "PBI_TOKEN=$TOKEN" >> $GITHUB_ENV
 
       # 1) Ler a cor e o workspace do tenant direto do config-isv.json
       - id: cfg
@@ -62,7 +60,7 @@ jobs:
           echo "brand_hex=$BRAND"       >> $GITHUB_OUTPUT
           echo "workspace_name=$WSPACE" >> $GITHUB_OUTPUT
 
-      # 2) Descobrir IDs do workspace e dataset
+      # 2) Descobrir IDs do workspace e do dataset
       - id: ids
         env:
           PBI_TOKEN: ${{ env.PBI_TOKEN }}
@@ -70,7 +68,7 @@ jobs:
           GROUP_ID=$(curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
             "https://api.powerbi.com/v1.0/myorg/groups" \
             | jq -r --arg n "${{ steps.cfg.outputs.workspace_name }}" '.value[] | select(.name==$n) | .id')
-          # tenta achar pelo nome; se não achar, pega o primeiro dataset do workspace
+          # tenta achar o dataset pelo nome; se não achar, pega o primeiro dataset do workspace
           DATASET_ID=$(curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
             "https://api.powerbi.com/v1.0/myorg/groups/${GROUP_ID}/datasets" \
             | jq -r --arg n "${{ env.DATASET_NAME }}" '(.value[] | select(.name==$n) | .id) // .value[0].id')
