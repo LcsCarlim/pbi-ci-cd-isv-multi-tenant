@@ -46,23 +46,23 @@ if ($src) {
 
     $itemsFolders = Get-ChildItem  -Path $src -recurse -include ("*.pbidataset", "*.pbism")
 
-    foreach ($itemFolder in $itemsFolders) {	
-        $itemPath = "$($itemFolder.Directory.FullName)\definition"
+    # foreach ($itemFolder in $itemsFolders) {	
+    #     $itemPath = "$($itemFolder.Directory.FullName)\definition"
 
-        if (!(Test-Path $itemPath)) {
-            $itemPath = "$($itemFolder.Directory.FullName)\model.bim"
+    #     if (!(Test-Path $itemPath)) {
+    #         $itemPath = "$($itemFolder.Directory.FullName)\model.bim"
 
-            if (!(Test-Path $itemPath)) {
-                throw "Cannot find semantic model definition."
-            }
-        }
+    #         if (!(Test-Path $itemPath)) {
+    #             throw "Cannot find semantic model definition."
+    #         }
+    #     }
 
-        Write-Host "Running BPA rules for: '$itemPath'"
+    #     Write-Host "Running BPA rules for: '$itemPath'"
 
-        $process = Start-Process -FilePath "$destinationPath\TabularEditor.exe" -ArgumentList """$itemPath"" -A ""$rulesPath"" -G" -NoNewWindow -Wait -PassThru    
+    #     $process = Start-Process -FilePath "$destinationPath\TabularEditor.exe" -ArgumentList """$itemPath"" -A ""$rulesPath"" -G" -NoNewWindow -Wait -PassThru    
 
-        if ($process.ExitCode -ne 0) {
-            throw "Error running BPA rules for: '$itemPath'"
-        }    
-    }
-}
+    #     if ($process.ExitCode -ne 0) {
+    #         throw "Error running BPA rules for: '$itemPath'"
+    #     }    
+    # }
+} 
