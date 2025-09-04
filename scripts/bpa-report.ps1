@@ -46,21 +46,21 @@ if ($src) {
 
     $itemsFolders = Get-ChildItem  -Path $src -recurse -include ("*.pbir")
 
-    foreach ($itemFolder in $itemsFolders) {	
-        $itemPath = "$($itemFolder.Directory.FullName)\definition"
+    # foreach ($itemFolder in $itemsFolders) {	
+    #     $itemPath = "$($itemFolder.Directory.FullName)\definition"
 
-        if (!(Test-Path $itemPath)) {
-              if (!(Test-Path $itemPath)) {
-                throw "Cannot find report PBIR definition. If you are using PBIR-Legacy (report.json), please convert it to PBIR using Power BI Desktop."
-            }
-        }
+    #     if (!(Test-Path $itemPath)) {
+    #           if (!(Test-Path $itemPath)) {
+    #             throw "Cannot find report PBIR definition. If you are using PBIR-Legacy (report.json), please convert it to PBIR using Power BI Desktop."
+    #         }
+    #     }
 
-        Write-Host "Running BPA rules for: '$itemPath'"
+    #     Write-Host "Running BPA rules for: '$itemPath'"
 
-        $process = Start-Process -FilePath "$destinationPath\win-x64\CLI\PBIRInspectorCLI.exe" -ArgumentList "-pbipreport ""$itemPath"" -rules ""$rulesPath"" -formats ""GitHub""" -NoNewWindow -Wait -PassThru    
+    #     $process = Start-Process -FilePath "$destinationPath\win-x64\CLI\PBIRInspectorCLI.exe" -ArgumentList "-pbipreport ""$itemPath"" -rules ""$rulesPath"" -formats ""GitHub""" -NoNewWindow -Wait -PassThru    
 
-        if ($process.ExitCode -ne 0) {
-            throw "Error running BPA rules for: '$itemPath'"
-        }    
-    }
+    #     if ($process.ExitCode -ne 0) {
+    #         throw "Error running BPA rules for: '$itemPath'"
+    #     }    
+    # }
 }

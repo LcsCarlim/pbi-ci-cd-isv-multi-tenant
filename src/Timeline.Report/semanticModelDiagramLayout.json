@@ -4,13 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-<<<<<<< HEAD
-        "x": 8030,
-        "y": 0
-=======
-        "x": 7328,
         "y": 235.19999694824219
->>>>>>> bbd3a2213e6113c88e63c63ea8f3ebd08fb62c36
+        "y": 235
       },
       "nodes": [
         {
@@ -560,10 +555,7 @@
           "zIndex": 0
         },
         {
-          "location": {
-            "x": 9097.6759449154379,
-            "y": 0
-          },
+          "location": {},
           "nodeIndex": "bd_ajuste_saldo_manual",
           "nodeLineageTag": "49195b99-195b-4ff3-b898-41f58191386e",
           "size": {
@@ -573,10 +565,7 @@
           "zIndex": 0
         },
         {
-          "location": {
-            "x": 9521.91001126529,
-            "y": 0
-          },
+          "location": {},
           "nodeIndex": "bd_funil_aquisicao",
           "nodeLineageTag": "c5e37c9e-490d-4691-89a4-4ce89ecafc48",
           "size": {

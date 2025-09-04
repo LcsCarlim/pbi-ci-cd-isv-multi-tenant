@@ -1,0 +1,138 @@
+table fato_clientes_ativos
+	lineageTag: 481f19ea-bac8-4853-89ff-f4f853a40204
+
+	column 'Nome da Origem'
+		dataType: string
+		lineageTag: 656055dc-8d90-44ae-a472-43e890d42a11
+		summarizeBy: none
+		sourceColumn: Nome da Origem
+
+		annotation SummarizationSetBy = Automatic
+
+	column userid
+		dataType: string
+		lineageTag: fac758a7-fa53-45c5-96ef-c7dad3df5e03
+		summarizeBy: none
+		sourceColumn: userid
+
+		annotation SummarizationSetBy = Automatic
+
+	column data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e2c5d820-be23-426e-9fd3-ce255c8a8e91
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column clientes_ativos
+		dataType: int64
+		formatString: 0
+		lineageTag: 59c9acbc-5d3b-4991-91be-90fe5576dc2e
+		summarizeBy: sum
+		sourceColumn: clientes_ativos
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_ativo_90d
+		dataType: int64
+		formatString: 0
+		lineageTag: 06140498-a303-4394-b4b3-35498306dd99
+		summarizeBy: sum
+		sourceColumn: status_ativo_90d
+
+		annotation SummarizationSetBy = Automatic
+
+	column media_l30d
+		dataType: double
+		lineageTag: 34e26877-1e77-4cc6-85a8-be319a526585
+		summarizeBy: sum
+		sourceColumn: media_l30d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tier_l30d
+		dataType: int64
+		formatString: 0
+		lineageTag: e9339dc7-61d7-46f2-b571-6cf4aea9c22c
+		summarizeBy: sum
+		sourceColumn: tier_l30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier_high_lifetime
+		dataType: int64
+		formatString: 0
+		lineageTag: 00597004-72ec-4a17-8c16-aa40baf22da8
+		summarizeBy: sum
+		sourceColumn: tier_high_lifetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column media_high_lifetime
+		dataType: double
+		lineageTag: d8d4c8f7-7af2-4a4f-b9ed-ee055ac87096
+		summarizeBy: sum
+		sourceColumn: media_high_lifetime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hora_atualizacao
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a69ab4be-628a-4e5a-a587-d4add5c9fdb9
+		summarizeBy: none
+		sourceColumn: hora_atualizacao
+
+		variation Variation
+			isDefault
+			relationship: 39d51e1b-51e6-4209-af92-c8cbba1b72ae
+			defaultHierarchy: LocalDateTable_b3b6eb02-97fe-4f35-88fd-c2b2bafe429a.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_replica = fato_clientes_ativos[data]
+		formatString: General Date
+		lineageTag: e84bcb1f-a4c3-4a49-8ef6-01eba6753eee
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: d01533d7-6080-4656-96b0-7973c999efd3
+			defaultHierarchy: LocalDateTable_664726c0-1b0f-49b4-ad30-13d532578463.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_semana = WEEKNUM(fato_clientes_ativos[data], 2)
+		formatString: 0
+		lineageTag: 6a8a7e63-a407-40c1-9688-63296746b3f1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fato_clientes_ativos = m
+		mode: import
+		source =
+				let
+				    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/clientes_ativos"),
+				    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+				    #"Arquivos Ocultos Filtrados1" = Table.SelectRows(#"Linhas Filtradas", each [Attributes]?[Hidden]? <> true),
+				    #"Invocar Função Personalizada1" = Table.AddColumn(#"Arquivos Ocultos Filtrados1", "Transformar Arquivo (28)", each #"Transformar Arquivo (28)"([Content])),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Invocar Função Personalizada1", {"Name", "Nome da Origem"}),
+				    #"Outras Colunas Removidas1" = Table.SelectColumns(#"Colunas Renomeadas1", {"Nome da Origem", "Transformar Arquivo (28)"}),
+				    #"Coluna de Tabela Expandida1" = Table.ExpandTableColumn(#"Outras Colunas Removidas1", "Transformar Arquivo (28)", Table.ColumnNames(#"Transformar Arquivo (28)"(#"Arquivo de Amostra (28)"))),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Coluna de Tabela Expandida1",{{"Nome da Origem", type text}, {"userid", type text}, {"data", type date}, {"clientes_ativos", Int64.Type}, {"status_ativo_90d", Int64.Type}, {"media_l30d", type number}, {"tier_l30d", Int64.Type}, {"tier_high_lifetime", Int64.Type}, {"media_high_lifetime", type number}, {"hora_atualizacao", type datetime}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
