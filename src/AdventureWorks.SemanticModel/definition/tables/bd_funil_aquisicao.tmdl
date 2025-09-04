@@ -1,0 +1,257 @@
+table bd_funil_aquisicao
+	lineageTag: c5e37c9e-490d-4691-89a4-4ce89ecafc48
+
+	column 'Nome da Origem'
+		dataType: string
+		lineageTag: 66ee05d8-f1e7-47b6-974d-3c41ef0cac3f
+		summarizeBy: none
+		sourceColumn: Nome da Origem
+
+		annotation SummarizationSetBy = Automatic
+
+	column userid
+		dataType: string
+		lineageTag: 4e4f5655-f0e5-4db9-a389-cd9b9d81862d
+		summarizeBy: none
+		sourceColumn: userid
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_source_cadastro
+		dataType: string
+		lineageTag: 47dcca16-7733-4180-8894-4429bb59e822
+		summarizeBy: none
+		sourceColumn: utm_source_cadastro
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_campaign_cadastro
+		dataType: string
+		lineageTag: a1620012-d43c-4eaa-b32e-eb81cbb2a304
+		summarizeBy: none
+		sourceColumn: utm_campaign_cadastro
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_medium_cadastro
+		dataType: string
+		lineageTag: ba18cb94-a77b-4953-82f7-cfb2ca733b79
+		summarizeBy: none
+		sourceColumn: utm_medium_cadastro
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_content_cadastro
+		dataType: string
+		lineageTag: 5597e260-e490-43d0-b46d-0a414c9e797e
+		summarizeBy: none
+		sourceColumn: utm_content_cadastro
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_term_cadastro
+		dataType: string
+		lineageTag: 415172a5-a984-4a0e-b5af-79944c4b4f29
+		summarizeBy: none
+		sourceColumn: utm_term_cadastro
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_source_ftd
+		dataType: string
+		lineageTag: a3f32297-09e9-4ced-958d-7dc836bb0c52
+		summarizeBy: none
+		sourceColumn: utm_source_ftd
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_campaign_ftd
+		dataType: string
+		lineageTag: d8b0e545-7df3-4845-914b-949c465f41d0
+		summarizeBy: none
+		sourceColumn: utm_campaign_ftd
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_medium_ftd
+		dataType: string
+		lineageTag: 982ae5b8-e27a-4ed4-aebd-f3a9b99677a1
+		summarizeBy: none
+		sourceColumn: utm_medium_ftd
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_content_ftd
+		dataType: string
+		lineageTag: 750e3581-3a1b-4476-9360-f0b4bd0de5e5
+		summarizeBy: none
+		sourceColumn: utm_content_ftd
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_term_ftd
+		dataType: string
+		lineageTag: 7e38ba1b-e459-4edd-bf15-09c10b369086
+		summarizeBy: none
+		sourceColumn: utm_term_ftd
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_cadastro
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6aae274e-f1f1-4977-989c-c5a6224e3cfe
+		summarizeBy: none
+		sourceColumn: data_cadastro
+
+		variation Variation
+			isDefault
+			relationship: 05dc2cc5-0f94-4bb1-a794-a424a2edde23
+			defaultHierarchy: LocalDateTable_605f0955-1ad5-4935-96fa-8b54215e6bce.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column data_ftd
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0f143aaf-f3ca-43bd-97fa-49bbf8482efc
+		summarizeBy: none
+		sourceColumn: data_ftd
+
+		variation Variation
+			isDefault
+			relationship: afe1dc2e-c816-4a4b-9299-fe826b878a2e
+			defaultHierarchy: LocalDateTable_4d10a3b1-e5c5-4f29-a65b-d44475d47c80.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column amount
+		dataType: double
+		lineageTag: f5b12ee9-7615-4a1a-9740-9e3b6c5d2a2e
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tier_l30d_ftd
+		dataType: int64
+		formatString: 0
+		lineageTag: 673783f0-a021-4e3e-9af6-dc8c78f8c9b5
+		summarizeBy: sum
+		sourceColumn: tier_l30d_ftd
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier_high_lifetime_ftd
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d575ea2-e2ca-4c64-9f8b-bec516dfea38
+		summarizeBy: sum
+		sourceColumn: tier_high_lifetime_ftd
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier_l30d_latest
+		dataType: int64
+		formatString: 0
+		lineageTag: ac5981fc-6541-4ed6-9b6b-9ff9ada6ebfa
+		summarizeBy: sum
+		sourceColumn: tier_l30d_latest
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier_high_lifetime_latest
+		dataType: int64
+		formatString: 0
+		lineageTag: 08179e87-6c4d-4087-9ee9-6408f67a7095
+		summarizeBy: sum
+		sourceColumn: tier_high_lifetime_latest
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_utm_source
+		dataType: string
+		lineageTag: 64583e12-0a86-4ddf-bb33-7849bd788c3c
+		summarizeBy: none
+		sourceColumn: check_utm_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_utm_campaign
+		dataType: string
+		lineageTag: b27b2cee-0d4c-4ae3-baa9-0e39176ee05f
+		summarizeBy: none
+		sourceColumn: check_utm_campaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_utm_medium
+		dataType: string
+		lineageTag: d94c82ff-515a-4217-be27-798480919944
+		summarizeBy: none
+		sourceColumn: check_utm_medium
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_utm_content
+		dataType: string
+		lineageTag: 215dc550-e8aa-4f77-b945-8778b29d41cb
+		summarizeBy: none
+		sourceColumn: check_utm_content
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_utm_term
+		dataType: string
+		lineageTag: a8971aea-6a11-46d5-ab2f-60cd8acb3326
+		summarizeBy: none
+		sourceColumn: check_utm_term
+
+		annotation SummarizationSetBy = Automatic
+
+	column hora_atualizacao
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e4b53c32-e16b-41e4-853b-a9b774be38c3
+		summarizeBy: none
+		sourceColumn: hora_atualizacao
+
+		variation Variation
+			isDefault
+			relationship: 9491dbce-d27f-48b9-9c04-9a1d070dab3f
+			defaultHierarchy: LocalDateTable_37cf6bb5-0c67-4265-b8f5-89cd39a096f6.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_semana = WEEKNUM(bd_funil_aquisicao[data_cadastro], 2)
+		formatString: 0
+		lineageTag: b62bea6e-b08e-4ef1-a0af-d38b6fdd7c8b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bd_funil_aquisicao = m
+		mode: import
+		source =
+				let
+				    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/funil_aquisicao"),
+				    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+				    #"Arquivos Ocultos Filtrados1" = Table.SelectRows(#"Linhas Filtradas", each [Attributes]?[Hidden]? <> true),
+				    #"Invocar Função Personalizada1" = Table.AddColumn(#"Arquivos Ocultos Filtrados1", "Transformar Arquivo (6)", each #"Transformar Arquivo (6)"([Content])),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Invocar Função Personalizada1", {"Name", "Nome da Origem"}),
+				    #"Outras Colunas Removidas1" = Table.SelectColumns(#"Colunas Renomeadas1", {"Nome da Origem", "Transformar Arquivo (6)"}),
+				    #"Coluna de Tabela Expandida1" = Table.ExpandTableColumn(#"Outras Colunas Removidas1", "Transformar Arquivo (6)", Table.ColumnNames(#"Transformar Arquivo (6)"(#"Arquivo de Amostra (6)"))),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Coluna de Tabela Expandida1",{{"Nome da Origem", type text}, {"userid", type text}, {"utm_source_cadastro", type text}, {"utm_campaign_cadastro", type text}, {"utm_medium_cadastro", type text}, {"utm_content_cadastro", type text}, {"utm_term_cadastro", type text}, {"utm_source_ftd", type text}, {"utm_campaign_ftd", type text}, {"utm_medium_ftd", type text}, {"utm_content_ftd", type text}, {"utm_term_ftd", type text}, {"data_cadastro", type date}, {"data_ftd", type date}, {"amount", type number}, {"tier_l30d_ftd", Int64.Type}, {"tier_high_lifetime_ftd", Int64.Type}, {"tier_l30d_latest", Int64.Type}, {"tier_high_lifetime_latest", Int64.Type}, {"check_utm_source", type text}, {"check_utm_campaign", type text}, {"check_utm_medium", type text}, {"check_utm_content", type text}, {"check_utm_term", type text}, {"hora_atualizacao", type datetime}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,22 +1,1269 @@
-expression SqlServerInstance = "BOOK-PROIJR07F2" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	lineageTag: ab6f503f-7372-49c3-883d-1fd0e0bccb50
+expression 'Arquivo de Amostra (10)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/depositos_recorrentes"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 14cc5bd8-7bd4-488a-b593-b49abe76b4f8
+	queryGroup: 'Transformar Arquivo de Consulta1 (9)\Consultas Auxiliares'
 
-	annotation PBI_NavigationStepName = Navigation
+	annotation PBI_ResultType = Binary
 
-	annotation PBI_ResultType = Text
+expression Parâmetro10 = #"Arquivo de Amostra (10)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (10)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: c91f40b6-00d1-4f17-88cd-ac113383368f
+	queryGroup: 'Transformar Arquivo de Consulta1 (9)\Consultas Auxiliares'
 
-expression SqlServerDatabase = "AdventureWorksDW-PRD" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	lineageTag: f77fc3e1-e954-46f1-9674-ae7cb1414cb4
+	annotation PBI_ResultType = Binary
 
-	annotation PBI_NavigationStepName = Navigation
+	annotation PBI_NavigationStepName = Navegação
 
-	annotation PBI_ResultType = Text
+expression 'Transformar o Arquivo de Exemplo (10)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro10, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: e8cc79b2-8771-42cc-ba6e-6a5f92618dd4
+	queryGroup: 'Transformar Arquivo de Consulta1 (9)'
 
-/// Used to format month names in the Date query.
-expression Culture = "en-US" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
-	lineageTag: 96330e66-116d-4b50-aa68-ddd29eb060dd
+	annotation PBI_ResultType = Table
 
-	annotation PBI_NavigationStepName = Navigation
+expression 'Transformar Arquivo (10)' =
+		let
+		    Fonte = (Parâmetro10 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro10, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	lineageTag: 92878843-7ce7-4e7a-ba1b-02a8854c20fb
+	queryGroup: 'Transformar Arquivo de Consulta1 (9)\Consultas Auxiliares'
 
-	annotation PBI_ResultType = Text
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (11)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/softswiss"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 6a34956c-cc9a-41d7-a109-7934a509bf8b
+	queryGroup: 'Transformar Arquivo de Consulta1 (10)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro11 = #"Arquivo de Amostra (11)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (11)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 4490a527-7781-4ed2-9962-a0207a38e122
+	queryGroup: 'Transformar Arquivo de Consulta1 (10)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (11)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro11, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: f3930bcb-b74a-45dd-94f7-5500a3d1d20a
+	queryGroup: 'Transformar Arquivo de Consulta1 (10)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (11)' =
+		let
+		    Fonte = (Parâmetro11 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro11, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	lineageTag: 77080c45-fc04-48e3-be78-c72938269893
+	queryGroup: 'Transformar Arquivo de Consulta1 (10)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (12)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/users_dimensao_reduzida"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: d0ccc496-9eaf-448d-9e10-352dc1a2210a
+	queryGroup: 'Transformar Arquivo de Consulta1 (11)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro12 = #"Arquivo de Amostra (12)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (12)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: f30b7f80-5e9a-4151-a9ff-8daeb97baffc
+	queryGroup: 'Transformar Arquivo de Consulta1 (11)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (12)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro12, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 1a1570bd-0024-4bea-81bf-1b8e2a10176a
+	queryGroup: 'Transformar Arquivo de Consulta1 (11)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (12)' =
+		let
+		    Fonte = (Parâmetro12 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro12, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	lineageTag: c44dabf9-1eae-4bfc-8306-e9bca492c04b
+	queryGroup: 'Transformar Arquivo de Consulta1 (11)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Arquivo de Amostra (14)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/resumo_executivo_por_user"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: b53a8767-ec68-4760-9403-0549e8f0194d
+	queryGroup: 'Transformar Arquivo de Consulta1 (13)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro14 = #"Arquivo de Amostra (14)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (14)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 9317ea15-f50a-401b-bb97-3abb6737ff3c
+	queryGroup: 'Transformar Arquivo de Consulta1 (13)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (14)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro14, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: b0e1d385-ba45-43cf-8b9a-dda0d45ea6af
+	queryGroup: 'Transformar Arquivo de Consulta1 (13)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (14)' =
+		let
+		    Fonte = (Parâmetro14 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro14, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (14)""}" ]
+	lineageTag: 913e38db-09fd-4568-975d-a71f35f914ef
+	queryGroup: 'Transformar Arquivo de Consulta1 (13)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Arquivo de Amostra (15)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/resumo_executivo_por_user"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: b538118c-d3de-4af4-90ce-5dc73518ce0c
+	queryGroup: 'Transformar Arquivo de Consulta1 (14)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro15 = #"Arquivo de Amostra (15)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (15)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 4713966b-6782-4f49-b4ee-caee38eb07f9
+	queryGroup: 'Transformar Arquivo de Consulta1 (14)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (15)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro15, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: fdf6b4ef-6884-47c1-b789-a117f31acf4f
+	queryGroup: 'Transformar Arquivo de Consulta1 (14)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (15)' =
+		let
+		    Fonte = (Parâmetro15 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro15, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (15)""}" ]
+	lineageTag: c475e1c9-1ad0-4ae1-b0f3-459abb00794c
+	queryGroup: 'Transformar Arquivo de Consulta1 (14)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (26)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/deposito"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 2c01d204-6775-495e-9d3d-bc9c2584a78f
+	queryGroup: 'Transformar Arquivo de fato_deposito\Consultas Auxiliares'
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro26 = #"Arquivo de Amostra (26)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (26)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: a28e876c-a723-43fb-b6bb-b4706c4e5283
+	queryGroup: 'Transformar Arquivo de fato_deposito\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (26)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro26, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 273625a1-d0b5-42d4-8572-c3b8e4b38dec
+	queryGroup: 'Transformar Arquivo de fato_deposito'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (26)' =
+		let
+		    Fonte = (Parâmetro26 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro26, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (26)""}" ]
+	lineageTag: 7314d143-5ea5-4097-82d1-678dd9f176ac
+	queryGroup: 'Transformar Arquivo de fato_deposito\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (28)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/clientes_ativos"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 451e2f38-91bd-4639-91cf-4b61099ffefd
+	queryGroup: 'Transformar Arquivo de fato_clientes_ativos_links\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro28 = #"Arquivo de Amostra (28)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (28)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: b010d51c-81ac-4abb-bad8-9b03d6cd6e8f
+	queryGroup: 'Transformar Arquivo de fato_clientes_ativos_links\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (28)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro28, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 77feb981-9397-4b5e-8458-5ebadbf28cf0
+	queryGroup: 'Transformar Arquivo de fato_clientes_ativos_links'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (28)' =
+		let
+		    Fonte = (Parâmetro28 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro28, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (28)""}" ]
+	lineageTag: 4a26b4c7-078f-45e5-9391-e2bf44cea9bb
+	queryGroup: 'Transformar Arquivo de fato_clientes_ativos_links\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (29)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/contas_depositantes"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 92f51a39-4178-4872-a0c9-291c327bd2a9
+	queryGroup: 'Transformar Arquivo de Consulta1 (26)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro29 = #"Arquivo de Amostra (29)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (29)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 63ca2149-e029-472b-88e4-b3b2004a85dc
+	queryGroup: 'Transformar Arquivo de Consulta1 (26)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (29)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro29, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 5b471e06-f9ee-4c03-a8c0-9fa9986e13a9
+	queryGroup: 'Transformar Arquivo de Consulta1 (26)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (29)' =
+		let
+		    Fonte = (Parâmetro29 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro29, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (29)""}" ]
+	lineageTag: 4297f72d-42ae-4605-a12d-78d6ff06141e
+	queryGroup: 'Transformar Arquivo de Consulta1 (26)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (30)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/contas_ftd"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: a0a72d28-b2a1-4f4c-a433-b222c2f7efa0
+	queryGroup: 'Transformar Arquivo de Consulta1 (27)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro30 = #"Arquivo de Amostra (30)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (30)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 5354ee62-e986-478f-9e54-33eb5de60a54
+	queryGroup: 'Transformar Arquivo de Consulta1 (27)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (30)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro30, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: a6fca032-c888-406a-99d2-536ff2fdd5ed
+	queryGroup: 'Transformar Arquivo de Consulta1 (27)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (30)' =
+		let
+		    Fonte = (Parâmetro30 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro30, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (30)""}" ]
+	lineageTag: ff6acf6d-cdb3-499e-aaf1-ebd4ed114483
+	queryGroup: 'Transformar Arquivo de Consulta1 (27)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Arquivo de Amostra (32)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/ngr"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: a55b09d3-38c4-49ef-b788-3d475cdf669a
+	queryGroup: 'Transformar Arquivo de Consulta1 (29)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro32 = #"Arquivo de Amostra (32)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (32)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 5c1495c5-c29c-4e1a-9310-a0266f6536c8
+	queryGroup: 'Transformar Arquivo de Consulta1 (29)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (32)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro32, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 8d7592e7-d591-4a8e-bf4a-a45735ac074e
+	queryGroup: 'Transformar Arquivo de Consulta1 (29)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (32)' =
+		let
+		    Fonte = (Parâmetro32 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro32, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (32)""}" ]
+	lineageTag: 58e12e28-35fc-4754-826f-430afca19984
+	queryGroup: 'Transformar Arquivo de Consulta1 (29)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (33)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/qtd_depositos"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: e160ce22-b733-421f-98a2-a4b0a671be91
+	queryGroup: 'Transformar Arquivo de Consulta1 (30)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro33 = #"Arquivo de Amostra (33)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (33)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 6e83151f-3b5c-4661-83a2-dedc26dcc678
+	queryGroup: 'Transformar Arquivo de Consulta1 (30)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (33)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro33, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 41cc8191-ac76-4734-a985-23358cd468ee
+	queryGroup: 'Transformar Arquivo de Consulta1 (30)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (33)' =
+		let
+		    Fonte = (Parâmetro33 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro33, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (33)""}" ]
+	lineageTag: cf487b35-be5e-49c8-a9c0-8ee700e44c7b
+	queryGroup: 'Transformar Arquivo de Consulta1 (30)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (35)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/valor_apostas"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 81b9f5c7-63a6-4a0c-be3b-ec2eed497cdb
+	queryGroup: 'Transformar Arquivo de Consulta1 (32)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro35 = #"Arquivo de Amostra (35)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (35)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 9e350d77-f00b-4c3c-b60c-adee592daf34
+	queryGroup: 'Transformar Arquivo de Consulta1 (32)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (35)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro35, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: c844ce4a-688d-46c2-909b-f8b14590adc4
+	queryGroup: 'Transformar Arquivo de Consulta1 (32)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (35)' =
+		let
+		    Fonte = (Parâmetro35 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro35, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (35)""}" ]
+	lineageTag: 7dfd1117-a7b4-4725-b2b1-8807ef254547
+	queryGroup: 'Transformar Arquivo de Consulta1 (32)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (36)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/ggr"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 5b8f081e-fb78-44f1-a3f1-2260281b293a
+	queryGroup: 'Transformar Arquivo de Consulta1 (33)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro36 = #"Arquivo de Amostra (36)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (36)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: f5abb76c-2779-458e-8251-4f9b25d4987a
+	queryGroup: 'Transformar Arquivo de Consulta1 (33)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (36)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro36, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: e06b407d-11b9-43a2-9688-ce30c6bf4024
+	queryGroup: 'Transformar Arquivo de Consulta1 (33)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (36)' =
+		let
+		    Fonte = (Parâmetro36 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro36, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (36)""}" ]
+	lineageTag: 4dff2e93-fe38-44d5-93fb-d9257700b200
+	queryGroup: 'Transformar Arquivo de Consulta1 (33)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (38)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/contas_novas"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 83334436-d0ed-418d-b95b-c06275900c54
+	queryGroup: 'Transformar Arquivo de Consulta1 (35)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro38 = #"Arquivo de Amostra (38)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (38)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 269f6093-1b60-4e16-b6d5-e50d0d049c57
+	queryGroup: 'Transformar Arquivo de Consulta1 (35)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (38)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro38, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 3b3ca81a-453e-403d-b3b3-5f8d736644ce
+	queryGroup: 'Transformar Arquivo de Consulta1 (35)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (38)' =
+		let
+		    Fonte = (Parâmetro38 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro38, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (38)""}" ]
+	lineageTag: d6482c10-8f9e-464f-836b-4af9c865e3bd
+	queryGroup: 'Transformar Arquivo de Consulta1 (35)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (43)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/softswiss_categoria"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: f17ac6fb-968f-4560-8e0d-7ff50ab5444b
+	queryGroup: 'Transformar Arquivo de Consulta1 (40)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro43 = #"Arquivo de Amostra (43)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (43)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 1fe1ec28-3007-428a-a434-730b8250caa2
+	queryGroup: 'Transformar Arquivo de Consulta1 (40)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (43)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro43, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: f5445c39-0cab-4004-96a3-ac4c8b3d240f
+	queryGroup: 'Transformar Arquivo de Consulta1 (40)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (43)' =
+		let
+		    Fonte = (Parâmetro43 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro43, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (43)""}" ]
+	lineageTag: a779d104-76fd-49de-93eb-286e902bcfbb
+	queryGroup: 'Transformar Arquivo de Consulta1 (40)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (45)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/kpc_loja"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 1d63dd64-13a2-4257-94cd-00574a9e5cb5
+	queryGroup: 'Transformar Arquivo de Consulta1 (42)\Consultas Auxiliares'
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro45 = #"Arquivo de Amostra (45)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (45)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 78e0ebdc-09d9-4048-b80f-ec876b68f57f
+	queryGroup: 'Transformar Arquivo de Consulta1 (42)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (45)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro45, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 087315df-74c4-4a84-86d4-fe82419cfd81
+	queryGroup: 'Transformar Arquivo de Consulta1 (42)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (45)' =
+		let
+		    Fonte = (Parâmetro45 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro45, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (45)""}" ]
+	lineageTag: acdf696f-abb7-4d4d-84e1-8564c5af1cb5
+	queryGroup: 'Transformar Arquivo de Consulta1 (42)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Arquivo de Amostra (46)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/kpc_acumulo"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: d36cce08-76ad-4dd9-9c41-d450acab60e8
+	queryGroup: 'Transformar Arquivo de Consulta1 (43)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro46 = #"Arquivo de Amostra (46)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (46)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: c5c86906-c33a-4727-a5c2-293cf0b6c8d0
+	queryGroup: 'Transformar Arquivo de Consulta1 (43)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (46)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro46, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: e57a30c4-b3a5-4c97-9716-15fed7761ac2
+	queryGroup: 'Transformar Arquivo de Consulta1 (43)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (46)' =
+		let
+		    Fonte = (Parâmetro46 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro46, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (46)""}" ]
+	lineageTag: 5d5cd0f1-de3a-43b6-8344-7cbfbd60d295
+	queryGroup: 'Transformar Arquivo de Consulta1 (43)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (47)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/netcash"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 8b9f7d63-ad7d-4454-9819-7e4a1947be3d
+	queryGroup: 'Transformar Arquivo de Consulta1 (44)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro47 = #"Arquivo de Amostra (47)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (47)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 66a9e099-508e-4e14-83d6-6ffeebd23367
+	queryGroup: 'Transformar Arquivo de Consulta1 (44)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (47)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro47, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 9dd53453-2f1d-47cb-8508-f068d3da9823
+	queryGroup: 'Transformar Arquivo de Consulta1 (44)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (47)' =
+		let
+		    Fonte = (Parâmetro47 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro47, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (47)""}" ]
+	lineageTag: 4ba06609-c08a-4493-8035-211d12146290
+	queryGroup: 'Transformar Arquivo de Consulta1 (44)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (9)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/depositos"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: c37ffbc9-4a4e-40da-b750-a4dbfc1d1667
+	queryGroup: 'Transformar Arquivo de Consulta1 (8)\Consultas Auxiliares'
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro9 = #"Arquivo de Amostra (9)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (9)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 474de446-6ee5-40f4-89e4-163f63aaa6ac
+	queryGroup: 'Transformar Arquivo de Consulta1 (8)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (9)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro9, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 55fc7040-027a-46cd-9c8b-dfa61667ffd5
+	queryGroup: 'Transformar Arquivo de Consulta1 (8)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (9)' =
+		let
+		    Fonte = (Parâmetro9 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro9, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (9)""}" ]
+	lineageTag: c1613db5-a506-4a10-a017-5d3eb9f04300
+	queryGroup: 'Transformar Arquivo de Consulta1 (8)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Arquivo de Amostra (13)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/depositos_sankey"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 7500960d-a7cf-4725-85f8-e0bd91907760
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro13 = #"Arquivo de Amostra (13)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (13)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 6982b3bb-c506-4289-92be-40a75a3774d0
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (13)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro13, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 261883e8-7796-480b-9a55-f3191939df74
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (13)' =
+		let
+		    Fonte = (Parâmetro13 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro13, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (13)""}" ]
+	lineageTag: 3fe4e042-4da5-42af-a92a-7c6eb5cd70cd
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Arquivo de Amostra (49)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/depositos_sankey"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 7aa276e6-7bd6-4510-9e25-30d80f77d2fd
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)\Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro49 = #"Arquivo de Amostra (49)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (49)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: d0e1a788-bdea-4fcb-8d10-83372edecf3c
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)\Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (49)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro49, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: eae5d885-d294-413d-875a-9d4367645dfe
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)\Transformar Arquivo de Consulta1'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (49)' =
+		let
+		    Fonte = (Parâmetro49 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro49, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (49)""}" ]
+	lineageTag: 0f754565-1c8b-4288-b3d0-11b43e3738c5
+	queryGroup: 'Transformar Arquivo de Consulta1 (12)\Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Exception
+
+expression 'Arquivo de Amostra (50)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/resumo_executivo_por_user"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 727b1b52-782b-41f9-9503-29bc4e6a301e
+	queryGroup: 'Transformar Arquivo de bd_resumo_executivo_user\Consultas Auxiliares'
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro50 = #"Arquivo de Amostra (50)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (50)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 90d15e76-5731-4a5e-a27e-950ee5977ce7
+	queryGroup: 'Transformar Arquivo de bd_resumo_executivo_user\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (50)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro50, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 20ac8063-bba8-42ac-a954-708aff9dc14a
+	queryGroup: 'Transformar Arquivo de bd_resumo_executivo_user'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (50)' =
+		let
+		    Fonte = (Parâmetro50 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro50, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (50)""}" ]
+	lineageTag: a3c8a0dc-3736-4e39-be51-5e13b4ebe3f9
+	queryGroup: 'Transformar Arquivo de bd_resumo_executivo_user\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Arquivo de Amostra (51)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/analise/002_comparativo"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 4b582dc0-7c68-4991-8f41-9187ae870a14
+	queryGroup: 'Transformar Arquivo de Consulta1 (46)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression Parâmetro51 = #"Arquivo de Amostra (51)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (51)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: eef59409-4d09-4f9f-bc56-a384aa6fdaa4
+	queryGroup: 'Transformar Arquivo de Consulta1 (46)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (51)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro51, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 7b2d035e-17d8-4333-8e27-0a7b7096e6e8
+	queryGroup: 'Transformar Arquivo de Consulta1 (46)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (51)' =
+		let
+		    Fonte = (Parâmetro51 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro51, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (51)""}" ]
+	lineageTag: 9f55bd39-1198-4bce-85a4-a71212f9a992
+	queryGroup: 'Transformar Arquivo de Consulta1 (46)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression Parâmetro1 = #"Arquivo de Amostra" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 7812fdc2-f0a0-412e-98fa-b6fc175bd83e
+	queryGroup: 'Transformar Arquivo de Consulta1 (2)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Arquivo de Amostra' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/ajuste_saldo_manual"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 2e0465c3-6742-4f29-95c4-04e3ac4077e5
+	queryGroup: 'Transformar Arquivo de Consulta1 (2)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo' =
+		let
+		    Fonte = Parquet.Document(Parâmetro1, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 6b7f67b0-d251-4eae-83c5-ed100a189d2f
+	queryGroup: 'Transformar Arquivo de Consulta1 (2)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo' =
+		let
+		    Fonte = (Parâmetro1 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro1, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo""}" ]
+	lineageTag: e5dbf448-6761-40d2-823e-705868ca3c42
+	queryGroup: 'Transformar Arquivo de Consulta1 (2)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression Parâmetro2 = #"Arquivo de Amostra (2)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (2)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: dcc22007-3a24-45d5-ac0e-adbb67895aee
+	queryGroup: 'Transformar Arquivo de Consulta1 (3)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Arquivo de Amostra (2)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/funil_aquisicao"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 849708c4-a25e-4663-ae3c-6187b73dd175
+	queryGroup: 'Transformar Arquivo de Consulta1 (3)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (2)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro2, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 5bb6324c-8f1c-4916-9f03-80f25847f86a
+	queryGroup: 'Transformar Arquivo de Consulta1 (3)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (2)' =
+		let
+		    Fonte = (Parâmetro2 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro2, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (2)""}" ]
+	lineageTag: 5ee9f3dd-74a7-4d81-a429-093406360495
+	queryGroup: 'Transformar Arquivo de Consulta1 (3)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression Parâmetro3 = #"Arquivo de Amostra (3)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (3)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: ac0c065e-e1bb-4696-a7a6-615b82b4a271
+	queryGroup: 'Transformar Arquivo de Consulta1 (4)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Arquivo de Amostra (3)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/funil_aquisicao"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 36b1d1a1-38c3-4796-8b8e-839da5e8e8de
+	queryGroup: 'Transformar Arquivo de Consulta1 (4)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (3)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro3, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 9a0d7efa-51b6-4985-bb78-5354a9ed1472
+	queryGroup: 'Transformar Arquivo de Consulta1 (4)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (3)' =
+		let
+		    Fonte = (Parâmetro3 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro3, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (3)""}" ]
+	lineageTag: e89783f8-8498-4965-a15a-5e24ea1f2798
+	queryGroup: 'Transformar Arquivo de Consulta1 (4)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression Parâmetro4 = #"Arquivo de Amostra (4)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (4)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: ebb1f702-5458-4d84-902d-fcc7d43715cf
+	queryGroup: 'Transformar Arquivo de Consulta1 (5)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Arquivo de Amostra (4)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/funil_aquisicao"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 4f432330-fd58-4d1b-901a-dbad2fabfd46
+	queryGroup: 'Transformar Arquivo de Consulta1 (5)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (4)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro4, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 8905ba4a-b058-4e50-b234-8b0f6d9f19f2
+	queryGroup: 'Transformar Arquivo de Consulta1 (5)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (4)' =
+		let
+		    Fonte = (Parâmetro4 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro4, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (4)""}" ]
+	lineageTag: 801a6265-1060-4c25-9511-e1212accadd9
+	queryGroup: 'Transformar Arquivo de Consulta1 (5)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression Parâmetro5 = #"Arquivo de Amostra (5)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (5)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 32fd2880-1e8f-416d-a43b-44c0f235cb3e
+	queryGroup: 'Transformar Arquivo de Consulta1 (6)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Arquivo de Amostra (5)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/funil_aquisicao"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 330c5b31-99a6-4f62-90a6-e6b6d25d920c
+	queryGroup: 'Transformar Arquivo de Consulta1 (6)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (5)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro5, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: d4529c5c-80f2-40f3-8967-4586d0f8d561
+	queryGroup: 'Transformar Arquivo de Consulta1 (6)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (5)' =
+		let
+		    Fonte = (Parâmetro5 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro5, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (5)""}" ]
+	lineageTag: 1a4c9598-c1bf-4eac-acc9-3130aa1bcdf1
+	queryGroup: 'Transformar Arquivo de Consulta1 (6)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression Parâmetro6 = #"Arquivo de Amostra (6)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (6)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 47f665b6-e768-43de-8f58-0e0114d5dc33
+	queryGroup: 'Transformar Arquivo de Consulta1 (7)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Arquivo de Amostra (6)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/funil_aquisicao"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: c2c36a67-141a-4baf-b868-ece9ee7973c6
+	queryGroup: 'Transformar Arquivo de Consulta1 (7)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (6)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro6, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: da97e529-8a3b-4540-8dd7-53f9fc255854
+	queryGroup: 'Transformar Arquivo de Consulta1 (7)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (6)' =
+		let
+		    Fonte = (Parâmetro6 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro6, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (6)""}" ]
+	lineageTag: 490afb8a-ec84-4785-92c2-a796af2b0c56
+	queryGroup: 'Transformar Arquivo de Consulta1 (7)\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression Parâmetro7 = #"Arquivo de Amostra (7)" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra (7)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: d77e40fd-b1a2-43ca-8dc3-bc87cb3622bf
+	queryGroup: 'Transformar Arquivo de fato_ftd\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Arquivo de Amostra (7)' =
+		let
+		    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/datasets_linkados/contas_ftd"),
+		    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+		    Navegação1 = #"Linhas Filtradas"{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 733eee3e-0d49-47e9-8e76-3292b784c432
+	queryGroup: 'Transformar Arquivo de fato_ftd\Consultas Auxiliares'
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo (7)' =
+		let
+		    Fonte = Parquet.Document(Parâmetro7, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+	lineageTag: 2b3ff675-08bd-4b71-82ab-974f75f83262
+	queryGroup: 'Transformar Arquivo de fato_ftd'
+
+	annotation PBI_ResultType = Table
+
+expression 'Transformar Arquivo (7)' =
+		let
+		    Fonte = (Parâmetro7 as binary) => let
+		    Fonte = Parquet.Document(Parâmetro7, [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+		in
+		    Fonte
+		in
+		    Fonte
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar o Arquivo de Exemplo (7)""}" ]
+	lineageTag: 0a8999d2-90e6-4428-a5ae-4c08e28d994e
+	queryGroup: 'Transformar Arquivo de fato_ftd\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
 

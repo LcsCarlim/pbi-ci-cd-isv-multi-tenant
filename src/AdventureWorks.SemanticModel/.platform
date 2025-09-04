@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "SemanticModel",
-    "displayName": "AdventureWorks"
+    "displayName": "Dashboard-geral_v1"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "15ab58ee-1496-4d2c-9311-a91d94d409a5"
+    "logicalId": "d109a80f-2f23-4785-8021-7e8d0e6d6f42"
   }
 }
