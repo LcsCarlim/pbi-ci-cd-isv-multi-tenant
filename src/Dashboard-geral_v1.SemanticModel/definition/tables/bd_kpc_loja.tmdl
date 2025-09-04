@@ -1,0 +1,196 @@
+table bd_kpc_loja
+	lineageTag: 7402ea82-293c-4e18-b0f3-bcd9dda862d6
+
+	column 'Nome da Origem'
+		dataType: string
+		lineageTag: ed710f03-f9ad-4988-b4cc-4453093bb398
+		summarizeBy: none
+		sourceColumn: Nome da Origem
+
+		annotation SummarizationSetBy = Automatic
+
+	column userid
+		dataType: string
+		lineageTag: 2dcf7f2d-5505-4b91-a4b7-05dc2c3f1d32
+		summarizeBy: none
+		sourceColumn: userid
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_source
+		dataType: string
+		lineageTag: 6f33b867-33bf-4eb0-83ba-c240226c6401
+		summarizeBy: none
+		sourceColumn: utm_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_medium
+		dataType: string
+		lineageTag: 63231e58-9b10-47ac-bee2-807c8fe7aa28
+		summarizeBy: none
+		sourceColumn: utm_medium
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_campaign
+		dataType: string
+		lineageTag: 4cd7d072-8589-409a-9881-b8e7a753765f
+		summarizeBy: none
+		sourceColumn: utm_campaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_content
+		dataType: string
+		lineageTag: e3ce472b-7099-4920-8e06-404ffe7a9361
+		summarizeBy: none
+		sourceColumn: utm_content
+
+		annotation SummarizationSetBy = Automatic
+
+	column utm_term
+		dataType: string
+		lineageTag: 2f57d1f3-0791-4554-9756-51e053201ab9
+		summarizeBy: none
+		sourceColumn: utm_term
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier_l30d
+		dataType: int64
+		formatString: 0
+		lineageTag: 407c3777-a972-43fd-986a-bffa8ba877ac
+		summarizeBy: sum
+		sourceColumn: tier_l30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column tier_high_lifetime
+		dataType: int64
+		formatString: 0
+		lineageTag: 66a22228-d230-4571-b7b2-71d28c47d3ad
+		summarizeBy: sum
+		sourceColumn: tier_high_lifetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 3501d9da-4b25-4db6-a5f6-1d946ad1b7fc
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 9547d26b-58d9-42f2-83ae-bcf8cfe8fc10
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_brt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 83c87e54-b95f-46e4-a4d4-52f654255c17
+		summarizeBy: none
+		sourceColumn: created_brt
+
+		variation Variation
+			isDefault
+			relationship: d6ea9a6a-48b3-413c-9df8-4b4f3dec9874
+			defaultHierarchy: LocalDateTable_f9eec73f-3d9d-443f-9f52-996330ebe2ee.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column updated_brt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 292874fd-bc07-49ae-8a0d-923d2f589715
+		summarizeBy: none
+		sourceColumn: updated_brt
+
+		variation Variation
+			isDefault
+			relationship: 6ed02012-9694-43d9-8316-221068007afd
+			defaultHierarchy: LocalDateTable_ee4bf0de-0d80-405e-ae7f-c36a7d535ce3.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column hora_atualizacao
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 57093a83-63e8-4f28-8e7b-4ebb0cf8c5ee
+		summarizeBy: none
+		sourceColumn: hora_atualizacao
+
+		variation Variation
+			isDefault
+			relationship: e899f75d-49c6-4949-9a3b-3aca5193537e
+			defaultHierarchy: LocalDateTable_e9ceefb4-46d0-4768-a7f0-4c22acaa3fcf.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column value_kpc
+		dataType: int64
+		formatString: 0
+		lineageTag: a5b8ef3a-1c25-4f8d-83fd-5fc833b18b40
+		summarizeBy: sum
+		sourceColumn: value_kpc
+
+		annotation SummarizationSetBy = Automatic
+
+	column qtd_total
+		dataType: int64
+		formatString: 0
+		lineageTag: e461aba7-0e0f-43fd-b274-651568ff4872
+		summarizeBy: sum
+		sourceColumn: qtd_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_semana_created = WEEKNUM(bd_kpc_loja[created_brt], 2)
+		formatString: 0
+		lineageTag: 8629a544-187b-4be6-b8dc-27617b5e922f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_semana_updated = WEEKNUM(bd_kpc_loja[updated_brt], 2)
+		formatString: 0
+		lineageTag: 3d9db8ab-c8a5-4bf7-82c4-0942f86bb90e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinkUserID = "https://admin-ai.kingpanda.com/users?userid=" & [userid]
+		lineageTag: 0db5276b-f9d4-4ed2-bd5a-02476d712afe
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bd_kpc_loja = m
+		mode: import
+		source =
+				let
+				    Fonte = AzureStorage.DataLake("https://kplakehouse.dfs.core.windows.net/gold/kpc_loja"),
+				    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([Extension] = ".parquet")),
+				    #"Arquivos Ocultos Filtrados1" = Table.SelectRows(#"Linhas Filtradas", each [Attributes]?[Hidden]? <> true),
+				    #"Invocar Função Personalizada1" = Table.AddColumn(#"Arquivos Ocultos Filtrados1", "Transformar Arquivo (45)", each #"Transformar Arquivo (45)"([Content])),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Invocar Função Personalizada1", {"Name", "Nome da Origem"}),
+				    #"Outras Colunas Removidas1" = Table.SelectColumns(#"Colunas Renomeadas1", {"Nome da Origem", "Transformar Arquivo (45)"}),
+				    #"Coluna de Tabela Expandida1" = Table.ExpandTableColumn(#"Outras Colunas Removidas1", "Transformar Arquivo (45)", Table.ColumnNames(#"Transformar Arquivo (45)"(#"Arquivo de Amostra (45)"))),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Coluna de Tabela Expandida1",{{"Nome da Origem", type text}, {"userid", type text}, {"utm_source", type text}, {"utm_medium", type text}, {"utm_campaign", type text}, {"utm_content", type text}, {"utm_term", type text}, {"tier_l30d", Int64.Type}, {"tier_high_lifetime", Int64.Type}, {"status", type text}, {"description", type text}, {"created_brt", type date}, {"updated_brt", type date}, {"hora_atualizacao", type datetime}, {"value_kpc", Int64.Type}, {"qtd_total", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
