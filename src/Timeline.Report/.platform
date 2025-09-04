@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Timeline"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "868d17fd-9cef-442c-bd18-fda4fd772c26"
+  }
+}
