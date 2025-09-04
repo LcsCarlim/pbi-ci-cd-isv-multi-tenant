@@ -4,7 +4,7 @@
   "artifacts": [
     {
       "report": {
-        "path": "Timeline.Report"
+        "path": "Timelines.Report"
       }
     }
   ],
