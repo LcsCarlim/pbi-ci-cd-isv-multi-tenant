@@ -1,6 +1,7 @@
 name: deploy-isv
-  
+
 on:
+  # mantém o que você já tinha
   pull_request:
     branches:
       - main
@@ -12,8 +13,13 @@ jobs:
   tenantDeploy:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         tenant: [TENANT_A, TENANT_B, TENANT_C]
+
+    # Nome EXATO do seu modelo semântico/dataset
+    env:
+      DATASET_NAME: "Dashboard-geral_v1"
 
     steps:
       - name: Check out the code
@@ -30,13 +36,17 @@ jobs:
 
       - name: Run Deployment Script
         env:
-          # Maps the GitHub secret 'ISV_<TenantName>' to the 'ISV_<TenantName>' environment variable
+          # Mapeia o secret ISV_<TENANT> para a env var ISV_<TENANT>
           ${{ format('ISV_{0}', matrix.tenant) }}: ${{ secrets[format('ISV_{0}', matrix.tenant)] }}
-        # Same python code for each tenant, but with different values for the 'tenant' argument
         run: |
           python scripts/deploy-isv.py --config-file "./config-isv.json" --tenant ${{ matrix.tenant }}
 
-      # ---------- A PARTIR DAQUI: BrandHex por tenant ----------
+      # ---------- A PARTIR DAQUI: aplica BrandHex ----------
+
+      - name: Ensure jq is installed
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
 
       # 0) Obter token do Power BI (sem Azure CLI)
       - name: Get Power BI access token (no az cli)
@@ -49,41 +59,73 @@ jobs:
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&scope=https%3A%2F%2Fanalysis.windows.net%2Fpowerbi%2Fapi%2F.default&grant_type=client_credentials" \
             "https://login.microsoftonline.com/$TENANT_ID/oauth2/v2.0/token" | jq -r '.access_token')
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
+            echo "Falha ao obter token do Power BI."
+            exit 1
+          fi
           echo "PBI_TOKEN=$TOKEN" >> $GITHUB_ENV
 
-      # 1) Ler a cor e o workspace do tenant direto do config-isv.json
+      # 1) Ler brandHex e workspace do tenant no config-isv.json
       - id: cfg
         run: |
           T="${{ matrix.tenant }}"
           BRAND=$(jq -r --arg t "$T" '.[$t].brandHex' config-isv.json)
           WSPACE=$(jq -r --arg t "$T" '.[$t].workspace' config-isv.json)
+          echo "Tenant: $T"
+          echo "Workspace: $WSPACE"
+          echo "BrandHex: $BRAND"
           echo "brand_hex=$BRAND"       >> $GITHUB_OUTPUT
           echo "workspace_name=$WSPACE" >> $GITHUB_OUTPUT
 
-      # 2) Descobrir IDs do workspace e do dataset
+      # 2) Resolver workspace e dataset pelo nome + listar parâmetros (debug)
       - id: ids
         env:
           PBI_TOKEN: ${{ env.PBI_TOKEN }}
         run: |
+          set -e
+          # Workspace (Group)
           GROUP_ID=$(curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
             "https://api.powerbi.com/v1.0/myorg/groups" \
             | jq -r --arg n "${{ steps.cfg.outputs.workspace_name }}" '.value[] | select(.name==$n) | .id')
-          # tenta achar o dataset pelo nome; se não achar, pega o primeiro dataset do workspace
+          if [ -z "$GROUP_ID" ]; then
+            echo "Workspace '${{ steps.cfg.outputs.workspace_name }}' não encontrado."
+            exit 1
+          fi
+          echo "GROUP_ID=$GROUP_ID"
+
+          # Dataset (pelo nome do modelo semântico)
           DATASET_ID=$(curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
             "https://api.powerbi.com/v1.0/myorg/groups/${GROUP_ID}/datasets" \
-            | jq -r --arg n "${{ env.DATASET_NAME }}" '(.value[] | select(.name==$n) | .id) // .value[0].id')
+            | jq -r --arg n "${{ env.DATASET_NAME }}" '(.value[] | select(.name==$n) | .id) // empty')
+          if [ -z "$DATASET_ID" ]; then
+            echo "Dataset '${{ env.DATASET_NAME }}' não encontrado neste workspace."
+            echo "Datasets disponíveis:"
+            curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
+              "https://api.powerbi.com/v1.0/myorg/groups/${GROUP_ID}/datasets" \
+              | jq -r '.value[] | .name + "  (" + .id + ")"'
+            exit 1
+          fi
+          echo "DATASET_ID=$DATASET_ID"
+
+          # (Debug) Mostrar parâmetros do dataset
+          curl -sS -H "Authorization: Bearer $PBI_TOKEN" \
+            "https://api.powerbi.com/v1.0/myorg/groups/${GROUP_ID}/datasets/${DATASET_ID}/parameters" | tee params.json
+          jq -e '.value[] | select(.name=="BrandHex")' params.json >/dev/null || { echo "ERRO: parâmetro BrandHex não existe neste dataset."; exit 1; }
+
           echo "group_id=$GROUP_ID"     >> $GITHUB_OUTPUT
           echo "dataset_id=$DATASET_ID" >> $GITHUB_OUTPUT
 
-      # 3) Atualizar apenas BrandHex e fazer refresh
+      # 3) Atualizar BrandHex e disparar refresh
       - name: Set BrandHex + refresh
         env:
           PBI_TOKEN: ${{ env.PBI_TOKEN }}
         run: |
-          curl -sS -X POST \
+          set -e
+          curl -fsS -X POST \
             -H "Authorization: Bearer $PBI_TOKEN" -H "Content-Type: application/json" \
             "https://api.powerbi.com/v1.0/myorg/groups/${{ steps.ids.outputs.group_id }}/datasets/${{ steps.ids.outputs.dataset_id }}/Default.UpdateParameters" \
             -d '{"updateDetails":[{"name":"BrandHex","newValue":"'"${{ steps.cfg.outputs.brand_hex }}"'"}]}'
-          curl -sS -X POST \
+          echo "BrandHex atualizado. Iniciando refresh..."
+          curl -fsS -X POST \
             -H "Authorization: Bearer $PBI_TOKEN" \
             "https://api.powerbi.com/v1.0/myorg/groups/${{ steps.ids.outputs.group_id }}/datasets/${{ steps.ids.outputs.dataset_id }}/refreshes"
