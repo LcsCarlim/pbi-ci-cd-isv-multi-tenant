@@ -65,7 +65,7 @@ for key, value in config_environments:
     # Deploy semantic model
 
     semanticmodel_id = deploy_item(
-        "src/AdventureWorks.SemanticModel",
+        "src/Dashboard-geral_v1.SemanticModel",
         workspace_name=workspace_name,
         find_and_replace={
             (
