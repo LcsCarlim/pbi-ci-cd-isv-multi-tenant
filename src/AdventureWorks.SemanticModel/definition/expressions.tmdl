@@ -1268,7 +1268,7 @@ expression 'Transformar Arquivo (7)' =
 	annotation PBI_ResultType = Function
 
 expression BrandHex = "#000000" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	lineageTag: d9648897-f4a5-49ca-a20f-d2ae94a3c217
+	lineageTag: 708d41af-e4eb-4712-961d-68b3aa1c6da7
 
 	annotation PBI_NavigationStepName = Navegação
 
