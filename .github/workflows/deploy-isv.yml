@@ -3,7 +3,7 @@ name: deploy-isv
 on:
   pull_request:
     branches:
-      - dev
+      - main
     paths:
       - '**/src/**'
   workflow_dispatch:
