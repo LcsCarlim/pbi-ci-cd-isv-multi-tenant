@@ -26,7 +26,7 @@
     "capacity": "none",
     "workspace": "AdventureWorks_Oceania",
     "adminUPNs": "a9b51339-2089-43d5-ab51-a33a160be7a6,37523bc5-ce3d-4ded-bf23-dd87699ebba7",
-    "brandHex": "#422256",
+    "brandHex": "#412356",
     "semanticModelsParameters": {
       "SqlServerInstance": "BOOK-PROIJR07F2",
       "SqlServerDatabase": "AdventureWorksDW-Pacific"
