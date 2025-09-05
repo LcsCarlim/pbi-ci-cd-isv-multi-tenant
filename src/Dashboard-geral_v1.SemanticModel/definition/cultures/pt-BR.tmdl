@@ -565,6 +565,16 @@ cultureInfo pt-BR
 			            },
 			            "Weight": 0.485
 			          }
+			        },
+			        {
+			          "Campanhas": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -8652,6 +8662,16 @@ cultureInfo pt-BR
 			        {
 			          "periodo": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Período": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -64298,6 +64318,1035 @@ cultureInfo pt-BR
 			        }
 			      },
 			      "State": "Generated"
+			    },
+			    "bd_timeline.rmc_1d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_1d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 1D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_3d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_3d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 3D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_7d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_7d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 7D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_15d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_15d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 15D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_30d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_30d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 30D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_60d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_60d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 60D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_90d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_90d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 90D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_120d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_120d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 120D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_150d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_150d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 150D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_180d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_180d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 180D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.rmc_210d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "rmc_210d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RMC 210D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_1d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_1d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 1D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_3d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_3d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 3D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_7d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_7d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 7D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_15d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_15d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 15D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_30d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_30d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 30D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_60d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_60d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 60D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_90d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_90d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 90D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_120d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_120d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 120D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_150d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_150d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 150D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_180d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_180d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 180D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_ngr_210d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_ngr_210d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio 210D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_1d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_1d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 1D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_3d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_3d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 3D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_7d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_7d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 7D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_15d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_15d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 15D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_30d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_30d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 30D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_60d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_60d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 60D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_90d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_90d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 90D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_120d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_120d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 120D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_150d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_150d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 150D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_180d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_180d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 180D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_aposta_210d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_aposta_210d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média 210D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_1d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_1d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 1D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_3d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_3d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 3D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_7d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_7d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 7D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_15d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_15d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 15D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_30d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_30d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 30D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_60d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_60d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 60D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_90d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_90d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 90D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_120d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_120d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 120D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_150d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_150d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 150D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_180d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_180d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 180D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline.ticket_medio_deposito_210d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline",
+			          "ConceptualProperty": "ticket_medio_deposito_210d"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio 210D": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline_unpivot.qtd_depositantes_filtrado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline_unpivot",
+			          "ConceptualProperty": "qtd_depositantes_filtrado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Qnt. Depositantes por Período": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline_unpivot.qtd_apostadores_filtrado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline_unpivot",
+			          "ConceptualProperty": "qtd_apostadores_filtrado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Qtd. Apostadores": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline_unpivot.ticket_medio_aposta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline_unpivot",
+			          "ConceptualProperty": "ticket_medio_aposta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Aposta Média": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline_unpivot.ticket_medio_ngr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline_unpivot",
+			          "ConceptualProperty": "ticket_medio_ngr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NGR Médio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bd_timeline_unpivot.ticket_medio_deposito": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bd_timeline_unpivot",
+			          "ConceptualProperty": "ticket_medio_deposito"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Depósito Médio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
