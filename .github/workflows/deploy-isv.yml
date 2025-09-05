@@ -114,40 +114,5 @@ jobs:
 
           echo "group_id=$GROUP_ID"     >> $GITHUB_OUTPUT
           echo "dataset_id=$DATASET_ID" >> $GITHUB_OUTPUT
-
-      # 3) Atualizar BrandHex e disparar refresh (com fallback TakeOver em caso de 403)
-      - name: Set BrandHex + refresh (with TakeOver fallback)
-        env:
-          PBI_TOKEN: ${{ env.PBI_TOKEN }}
-        run: |
-          set -e
-
-          API_BASE="https://api.powerbi.com/v1.0/myorg/groups/${{ steps.ids.outputs.group_id }}/datasets/${{ steps.ids.outputs.dataset_id }}"
-
-          echo "Atualizando parâmetro BrandHex para: ${{ steps.cfg.outputs.brand_hex }}"
-          HTTP=$(curl -sS -o /tmp/update.json -w "%{http_code}" -X POST \
-            -H "Authorization: Bearer $PBI_TOKEN" -H "Content-Type: application/json" \
-            "$API_BASE/Default.UpdateParameters" \
-            -d '{"updateDetails":[{"name":"BrandHex","newValue":"'"${{ steps.cfg.outputs.brand_hex }}"'"}]}')
-
-          echo "HTTP UpdateParameters: $HTTP"
-          if [ "$HTTP" = "403" ]; then
-            echo "Recebeu 403 no UpdateParameters. Tentando TakeOver do dataset..."
-            curl -fsS -X POST -H "Authorization: Bearer $PBI_TOKEN" "$API_BASE/Default.TakeOver"
-
-            echo "Re-tentando UpdateParameters após TakeOver..."
-            HTTP=$(curl -sS -o /tmp/update.json -w "%{http_code}" -X POST \
-              -H "Authorization: Bearer $PBI_TOKEN" -H "Content-Type: application/json" \
-              "$API_BASE/Default.UpdateParameters" \
-              -d '{"updateDetails":[{"name":"BrandHex","newValue":"'"${{ steps.cfg.outputs.brand_hex }}"'"}]}')
-            echo "HTTP UpdateParameters (2ª tentativa): $HTTP"
-          fi
-
-          if [ "$HTTP" -ge 300 ]; then
-            echo "Falha ao atualizar parâmetro. Corpo da resposta:"
-            cat /tmp/update.json
-            exit 1
-          fi
-
           echo "BrandHex atualizado com sucesso. Disparando refresh..."
           curl -fsS -X POST -H "Authorization: Bearer $PBI_TOKEN" "$API_BASE/refreshes"
