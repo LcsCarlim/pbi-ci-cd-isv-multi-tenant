@@ -1,0 +1,23 @@
+table Config
+	lineageTag: 483b3ca7-b15a-4e67-9959-35609268e881
+
+	column BrandHex
+		dataType: string
+		lineageTag: ca9562e0-7723-4461-9c18-89831a4febef
+		summarizeBy: none
+		sourceColumn: BrandHex
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Config = m
+		mode: import
+		source =
+				let
+				    Config = #table(type table [BrandHex=text], {{BrandHex}})
+				in
+				    Config
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
