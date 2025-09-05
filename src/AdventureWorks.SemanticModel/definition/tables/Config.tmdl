@@ -1,9 +1,9 @@
 table Config
-	lineageTag: 483b3ca7-b15a-4e67-9959-35609268e881
+	lineageTag: 41025edf-c437-47fc-8615-d8e50ee3623d
 
 	column BrandHex
 		dataType: string
-		lineageTag: ca9562e0-7723-4461-9c18-89831a4febef
+		lineageTag: 125128eb-489d-41cf-8119-2661c4415764
 		summarizeBy: none
 		sourceColumn: BrandHex
 
